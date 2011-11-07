@@ -1,0 +1,17 @@
+plugin.tx_timekeeping {
+	view {
+		# cat=plugin.tx_timekeeping/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:timekeeping/Resources/Private/Templates/
+		# cat=plugin.tx_timekeeping/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:timekeeping/Resources/Private/Partials/
+		# cat=plugin.tx_timekeeping/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:timekeeping/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_timekeeping//a; type=int+; label=Default storage PID
+		storagePid = 
+	}
+	css {
+		filePath = EXT:timekeeping/Resources/Public/Css/basics.css
+	}
+}

@@ -1,0 +1,11 @@
+#timekeeping-content table {
+	width: 100%;
+}
+#timekeeping-content th {
+    font-weight: bold;
+    padding: 0 5px 5px 0;
+}
+
+#timekeeping-content td {
+    padding: 0 5px 5px 0;
+}

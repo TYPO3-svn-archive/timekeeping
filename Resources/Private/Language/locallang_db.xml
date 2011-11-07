@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'timekeeping'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_timekeeping_domain_model_family">Family</label>
+			<label index="tx_timekeeping_domain_model_family.name">Name</label>
+			<label index="tx_timekeeping_domain_model_family.start">Start</label>
+			<label index="tx_timekeeping_domain_model_family.end">End</label>
+			<label index="tx_timekeeping_domain_model_family.assignments">Assignments</label>
+			<label index="tx_timekeeping_domain_model_family.required_hours">Required Hours</label>
+			<label index="tx_timekeeping_domain_model_family.children">Children</label>
+			<label index="tx_timekeeping_domain_model_role">Role</label>
+			<label index="tx_timekeeping_domain_model_role.name">Name</label>
+			<label index="tx_timekeeping_domain_model_assignment">Assignment</label>
+			<label index="tx_timekeeping_domain_model_assignment.family">Family</label>
+			<label index="tx_timekeeping_domain_model_assignment.user">User</label>
+			<label index="tx_timekeeping_domain_model_assignment.role">Role</label>
+			<label index="tx_timekeeping_domain_model_assignment.timeunits">Time Units</label>
+			<label index="tx_timekeeping_domain_model_timeunit">Time Unit</label>
+			<label index="tx_timekeeping_domain_model_timeunit.date_of_work">Date Of Work</label>
+			<label index="tx_timekeeping_domain_model_timeunit.description">Description</label>
+			<label index="tx_timekeeping_domain_model_timeunit.duration">Duration</label>
+			<label index="tx_timekeeping_domain_model_timeunit.cleaning">Cleaning</label>
+			<label index="tx_timekeeping_domain_model_timeunit.assignment">Assignment</label>
+			<label index="tx_timekeeping_domain_model_requiredhours">Required Hours</label>
+			<label index="tx_timekeeping_domain_model_requiredhours.hours">Hours</label>
+			<label index="tx_timekeeping_domain_model_requiredhours.cleaning_hours">Cleaning Hours</label>
+		</languageKey>
+	</data>
+</T3locallang>

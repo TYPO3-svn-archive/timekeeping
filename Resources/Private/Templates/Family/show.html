@@ -1,0 +1,55 @@
+{namespace tk=Tx_Timekeeping_ViewHelpers}
+
+<f:layout name="main" />
+
+	<!-- TITLE -->
+<f:section name="title">
+	<f:translate key="Family_Show_Title" arguments="{0: family.name}" />
+</f:section>
+
+	<!-- MENU -->
+<f:section name="menu">
+	<ul>
+		<li><f:link.action action="index"><f:translate key="Family_Show_Action_Back" /></f:link.action></li>
+		<li><f:link.action action="edit" arguments="{family : family}"><f:translate key="Family_Show_Action_Edit" /></f:link.action></li>
+		<li><f:link.action action="delete" arguments="{family : family}"><f:translate key="Family_Show_Action_Delete" /></f:link.action></li>
+		<li><f:link.action action="new" controller="Timeunit" arguments="{family : family}"><f:translate key="Family_Show_Action_NewTimeunit" /></f:link.action></li>
+		<li><f:link.action action="index" controller="Timeunit" arguments="{family : family}"><f:translate key="Family_Show_Action_ListTimeunits" /></f:link.action></li>
+	</ul>
+</f:section>
+
+<f:section name="content">
+		<!-- FAMILY INFO -->
+	<table>
+		<tr>
+			<th><f:translate key="Family_Show_StartDate" /></th><td><f:format.date format="d.m.Y">{family.start}</f:format.date></td>
+		</tr><tr>
+			<th><f:translate key="Family_Show_EndDate" /></th><td><f:format.date format="d.m.Y">{family.end}</f:format.date></td>
+		</tr>
+	</table>
+
+		<!-- SUB FAMILY -->
+	<f:if condition="{family.children}">
+		<h3><f:translate key="Family_Show_Children" /></h3>
+		<f:render partial="familyList" arguments="{families : family.children}" />
+	</f:if>
+
+		<!-- MEMBERS -->
+	<h3><f:translate key="Family_Show_Members" /></h3>
+	<table>
+		<tr>
+			<th><f:translate key="Family_Show_Members_Name" /></th>
+			<th><f:translate key="Family_Show_Members_Role" /></th>
+			<th><f:translate key="Family_Show_Members_WorkedTime" /></th>
+			<th><f:translate key="Family_Show_Members_WorkedCleaningTime" /></th>
+		</tr>
+		<f:for each="{family.assignments}" as="assignment">
+			<tr>
+				<td>{assignment.user.name}</td>
+				<td>{assignment.role.name}</td>
+				<td><tk:timeFormat amount="{assignment.workedTime}" /></td>
+				<td><tk:timeFormat amount="{assignment.workedCleaningTime}" /></td>
+			</tr>
+		</f:for>
+	</table>
+</f:section>

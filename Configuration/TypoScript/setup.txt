@@ -1,0 +1,12 @@
+plugin.tx_timekeeping {
+	view {
+		templateRootPath = {$plugin.tx_timekeeping.view.templateRootPath}
+		partialRootPath = {$plugin.tx_timekeeping.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_timekeeping.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_timekeeping.persistence.storagePid}
+	}
+}
+
+page.includeCSS.timekeeping_basics = {$plugin.tx_timekeeping.css.filePath}

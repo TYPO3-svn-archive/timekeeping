@@ -1,0 +1,11 @@
+<f:layout name="main" />
+
+<f:section name="title">
+	<f:translate key="Family_Edit_Title" arguments="{0: family.name}" />
+</f:section>
+
+<f:section name="menu" />
+
+<f:section name="content">
+	<f:render partial="familyForm" arguments="{action : 'update', family : family, families : families, users : users, roles : roles}" />
+</f:section>
