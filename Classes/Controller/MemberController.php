@@ -83,7 +83,7 @@ class Tx_Timekeeping_Controller_MemberController extends Tx_Timekeeping_Controll
 	public function indexAction () {
 		$timeunitRepository =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_TimeunitRepository');
 		$user = $this->getCurrentFeUser();
-		// Wie bekomme ich die Familie des eingeloggten Users?
+		// how do i get the family of the current user?
 		$family = 1;
 		if($user === NULL) throw new Tx_Timekeeping_Domain_Exception_NoLoginException();
 		$this->view->assign('timeunits', $timeunitRepository->getTimeunitsForUser($user))
