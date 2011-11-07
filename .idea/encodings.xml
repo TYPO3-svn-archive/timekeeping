@@ -3,14 +3,13 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/Classes/Controller/AbstractController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Controller/BackendController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Classes/Controller/MemberController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Controller/TimeunitController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Exception/AbstractException.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Exception/NoFamilyMemberException.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Exception/NoLoginException.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Model/Assignment.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Model/Family.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Model/FeUser.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Model/Member.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Model/RequiredHours.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Model/Role.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Model/Timeunit.php" charset="UTF-8" />
@@ -39,7 +38,6 @@
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Member/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Timeunit/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Timeunit/new.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Timeunit/newTimeunit.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Public/Css/basics.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ext_emconf.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ext_localconf.php" charset="UTF-8" />
