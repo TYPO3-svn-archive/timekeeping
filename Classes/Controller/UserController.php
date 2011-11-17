@@ -43,17 +43,34 @@ class Tx_Timekeeping_Controller_UserController extends Tx_Timekeeping_Controller
 
 
 	/**
-	 * A family repository instance
-	 * @var Tx_Timekeeping_Domain_Repository_FamilyRepository
-	 */
-	protected $familyRepository;
-
-	/**
 	 * A frontend user repository instance
-	 * @var Tx_Timekeeping_Domain_Repository_UserRepository
+	 * @var Tx_Timekeeping_Domain_Repository_UserRepository $userRepository
 	 */
 	protected $userRepository;
 
+	public function injectUserRepository(Tx_Timekeeping_Domain_Repository_UserRepository $userRepository){
+					$this->userRepository = $userRepository;
+	}
+
+
+	/**
+	* @var Tx_Timekeeping_Domain_Repository_AssignmentRepository $assignmentRepository
+	*/
+	protected $assignmentRepository;
+
+	public function injectAssignmentRepository(Tx_Timekeeping_Domain_Repository_AssignmentRepository $assignmentRepository){
+					$this->assignmentRepository = $assignmentRepository;
+	}
+
+	/**
+	 * A family repository instance
+	 * @var Tx_Timekeeping_Domain_Repository_TimeunitRepository
+	 */
+	protected $timeunitRepository;
+
+	public function injectTimeunitRepository(Tx_Timekeeping_Domain_Repository_TimeunitRepository $timeunitRepository){
+					$this->timeunitRepository = $timeunitRepository;
+	}
 
 	/*
 	 * ACTION METHODS
@@ -70,9 +87,6 @@ class Tx_Timekeeping_Controller_UserController extends Tx_Timekeeping_Controller
 	 */
 
 	protected function initializeAction() {
-		//$this->familyRepository  =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_FamilyRepository');
-		$this->userRepository    =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_UserRepository');
-		$this->timeunitRepository =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_TimeunitRepository');
 	}
 
 	/**
@@ -83,10 +97,10 @@ class Tx_Timekeeping_Controller_UserController extends Tx_Timekeeping_Controller
 	 */
 	public function indexAction () {
 		$user = $this->getCurrentFeUser();
-		// how do i get the family of the current user?
-		//$family = 1;
-		$family = $user->getFamily();
-		//t3lib_div::debug($user->getFamily()->getUid());
+		if($user === NULL) throw new Tx_Timekeeping_Domain_Exception_NoLoginException();
+		$assignment = $this->assignmentRepository->findOneByUser($user);
+		if($assignment === NULL) throw new Tx_Timekeeping_Domain_Exception_NoFamilyMemberException();
+		$family = $assignment->getFamily();
 		if($user === NULL) throw new Tx_Timekeeping_Domain_Exception_NoLoginException();
 		$this->view->assign('timeunits', $this->timeunitRepository->getTimeunitsForUser($user))
 				   ->assign('user', $user)

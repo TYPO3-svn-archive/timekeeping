@@ -45,6 +45,10 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	 */
 	protected $familyRepository;
 
+	public function injectFamilyRepository(Tx_Timekeeping_Domain_Repository_FamilyRepository $familyRepository){
+					$this->familyRepository = $familyRepository;
+	}
+
 
 	/**
 	 * timeunitRepository
@@ -52,6 +56,21 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	 * @var Tx_Timekeeping_Domain_Repository_TimeunitRepository
 	 */
 	protected $timeunitRepository;
+
+	public function injectTimeunitRepository(Tx_Timekeeping_Domain_Repository_TimeunitRepository $timeunitRepository){
+					$this->timeunitRepository = $timeunitRepository;
+	}
+
+	/**
+	 * A frontend user repository instance
+	 * @var Tx_Timekeeping_Domain_Repository_UserRepository $userRepository
+	 */
+	protected $userRepository;
+
+	public function injectUserRepository(Tx_Timekeeping_Domain_Repository_UserRepository $userRepository){
+					$this->userRepository = $userRepository;
+	}
+
 
 	/**
 	 *
@@ -61,7 +80,7 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	 */
 
 	public function initializeAction() {
-		$this->familyRepository =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_FamilyRepository');
+
 	}
 
 
@@ -77,9 +96,8 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	 *
 	 */
 	public function indexAction ( Tx_Timekeeping_Domain_Model_Family $family ) {
-		$timeunitRepository =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_TimeunitRepository');
 		$this->view->assign('family' , $family)
-				   ->assign('timeunits', $timeunitRepository->getTimeunitsForFamily($family));
+				   ->assign('timeunits', $this->timeunitRepository->getTimeunitsForFamily($family));
 	}
 
 
@@ -157,9 +175,8 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	 */
 
 	protected function getCurrentFeUser() {
-		$userRepository = new Tx_Extbase_Domain_Repository_FrontendUserRepository();
 		return intval($GLOBALS['TSFE']->fe_user->user['uid']) > 0
-			? $userRepository->findByUid( intval($GLOBALS['TSFE']->fe_user->user['uid']) )
+			? $this->userRepository->findByUid( intval($GLOBALS['TSFE']->fe_user->user['uid']) )
 			: NULL;
 	}
 
