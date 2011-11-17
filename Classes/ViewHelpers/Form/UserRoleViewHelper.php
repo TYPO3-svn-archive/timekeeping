@@ -46,7 +46,7 @@ class Tx_Timekeeping_ViewHelpers_Form_UserRoleViewHelper extends Tx_Fluid_ViewHe
 	public function initializeArguments() {
 		parent::initializeArguments();
 		$this->registerArgument ( 'family', 'Tx_Timekeeping_Domain_Model_Family', '', TRUE );
-		$this->registerArgument ( 'user'   , 'Tx_Extbase_Domain_Model_FrontendUser'     , '', TRUE );
+		$this->registerArgument ( 'user'   , 'Tx_Timekeeping_Domain_Model_User'     , '', TRUE );
 	}
 
 

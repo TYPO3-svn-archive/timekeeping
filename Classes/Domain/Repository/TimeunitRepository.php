@@ -74,12 +74,12 @@ class Tx_Timekeeping_Domain_Repository_TimeunitRepository extends Tx_Extbase_Per
 	 * a hardcoded SQL query. Althrough we lose DMBS portability by doing so, this is
 	 * a good example on how to use this method.
 	 *
-	 * @param Tx_Extbase_Domain_Model_FrontendUser $user
+	 * @param Tx_Timekeeping_Domain_Model_User $user
 	 * @return Array<Tx_Timekeeping_Domain_Model_Timeunit>
 	 *
 	 */
 
-	public function getTimeunitsForUser(Tx_Extbase_Domain_Model_FrontendUser $user) {
+	public function getTimeunitsForUser(Tx_Timekeeping_Domain_Model_User $user) {
 
 		$extbaseFrameworkConfiguration = Tx_Extbase_Dispatcher::getExtbaseFrameworkConfiguration();
 		$pidList = implode(', ', t3lib_div::intExplode(',', $extbaseFrameworkConfiguration['persistence']['storagePid']));
@@ -93,35 +93,6 @@ class Tx_Timekeeping_Domain_Repository_TimeunitRepository extends Tx_Extbase_Per
 					   AND a.deleted=0 AND a.pid IN ($pidList)
 					   AND t.deleted=0 AND t.pid IN ($pidList)
 				ORDER BY t.date_of_work DESC";
-
-		$query = $this->createQuery();
-		$query->statement($sql);
-		return $query->execute();
-
-	}
-
-	/**
-	 *
-	 * Returns a container with the assignments of a specific user
-	 * This method does NOT use Extbase's Query Object Model, but rather
-	 * a hardcoded SQL query. Althrough we lose DMBS portability by doing so, this is
-	 * a good example on how to use this method.
-	 *
-	 * @param Tx_Extbase_Domain_Model_FrontendUser $user
-	 * @return Array<Tx_Timekeeping_Domain_Model_Assignment>
-	 *
-	 */
-
-	public function getAssignmentsForUser(Tx_Extbase_Domain_Model_FrontendUser $user) {
-
-		$extbaseFrameworkConfiguration = Tx_Extbase_Dispatcher::getExtbaseFrameworkConfiguration();
-		$pidList = implode(', ', t3lib_div::intExplode(',', $extbaseFrameworkConfiguration['persistence']['storagePid']));
-
-		$sql = "SELECT a.*
-				FROM        tx_timekeeping_domain_model_assignment a
-				WHERE      a.user={$user->getUID()}
-					   AND a.deleted=0 AND a.pid IN ($pidList)
-				";
 
 		$query = $this->createQuery();
 		$query->statement($sql);

@@ -96,7 +96,7 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * A caching array for the members of this family. This array maps the user role
 	 * Uid to all users assigned in this role.
-	 * @var array<array<Tx_Extbase_Domain_Model_FrontendUser>>
+	 * @var array<array<Tx_Timekeeping_Domain_Model_User>>
 	 */
 	protected $members = NULL;
 
@@ -279,7 +279,7 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * Gets all users that are assigned to this family in a specific user role
 	 * @param Tx_Timekeeping_Domain_Model_Role $role The role for which the users are to be selected
-	 * @return array<Tx_Extbase_Domain_Model_FrontendUser> The users assigned to this family in the specified role
+	 * @return array<Tx_Timekeeping_Domain_Model_User> The users assigned to this family in the specified role
 	 *
 	 */
 
@@ -296,12 +296,12 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 *
 	 * Gets the family for a user
-	 * @param Tx_Extbase_Domain_Model_FrontendUser $user The role for which the users are to be selected
-	 * @return array<Tx_Extbase_Domain_Model_FrontendUser> The users assigned to this family in the specified role
+	 * @param Tx_Timekeeping_Domain_Model_User $user The role for which the users are to be selected
+	 * @return array<Tx_Timekeeping_Domain_Model_User> The users assigned to this family in the specified role
 	 *
 	 */
 
-	public function getFamilyForUser(Tx_Extbase_Domain_Model_FrontendUser $user) {
+	public function getFamilyForUser(Tx_Timekeeping_Domain_Model_User $user) {
 		foreach ($this->assignments as $assignment) {
 			if ($assignment->getUser()->getUID() === $user->getUID()) return $assignment->getFamily();
 		}
@@ -311,7 +311,7 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 *
 	 * Gets the family assignment for a specific user.
-	 * @param  Tx_Extbase_Domain_Model_FrontendUser		 $user The user for which the assignment
+	 * @param  Tx_Timekeeping_Domain_Model_User		 $user The user for which the assignment
 	 *															is to be retrieved
 	 * @return Tx_Timekeeping_Domain_Model_Assignment	   The family assignment for the specified
 	 *															user, or NULL if the user is not a member
@@ -319,7 +319,7 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 */
 
-	public function getAssignmentForUser(Tx_Extbase_Domain_Model_FrontendUser $user) {
+	public function getAssignmentForUser(Tx_Timekeeping_Domain_Model_User $user) {
 		foreach ($this->assignments as $assignment) {
 			if ($assignment->getUser()->getUID() === $user->getUID()) return $assignment;
 		}
@@ -330,7 +330,7 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * Determines whether a specific user is assigned to this family
 	 *
-	 * @param Tx_Extbase_Domain_Model_FrontendUser $user The user whose assignment is
+	 * @param Tx_Timekeeping_Domain_Model_User $user The user whose assignment is
 	 *												   to be checked.
 	 * @return boolean								   TRUE, if the user is assigned
 	 *												   to this family, otherwise
@@ -338,7 +338,7 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 */
 
-	public function getIsAssigned(Tx_Extbase_Domain_Model_FrontendUser $user) {
+	public function getIsAssigned(Tx_Timekeeping_Domain_Model_User $user) {
 		return $this->getAssignmentForUser($user) !== NULL;
 	}
 
@@ -440,7 +440,7 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * Assigns a user to this family using a specified user role.
 	 *
-	 * @param Tx_Extbase_Domain_Model_FrontendUser   $user The user that is to be assigned
+	 * @param Tx_Timekeeping_Domain_Model_User   $user The user that is to be assigned
 	 *													 to this family.
 	 * @param Tx_Timekeeping_Domain_Model_Role $role The role the user is to be
 	 *													 assigned in.
@@ -448,7 +448,7 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 */
 
-	public function assignUser( Tx_Extbase_Domain_Model_FrontendUser   $user,
+	public function assignUser( Tx_Timekeeping_Domain_Model_User   $user,
 								Tx_Timekeeping_Domain_Model_Role $role) {
 		if (!$this->getIsAssigned($user)) {
 			$assignment = new Tx_Timekeeping_Domain_Model_Assignment($user, $this, $role);
@@ -460,12 +460,12 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * Unassigns a specific user.
 	 *
-	 * @param Tx_Extbase_Domain_Model_FrontendUser $user The user that is to be unassigned
+	 * @param Tx_Timekeeping_Domain_Model_User $user The user that is to be unassigned
 	 * @return void
 	 *
 	 */
 
-	public function unassignUser( Tx_Extbase_Domain_Model_FrontendUser $user) {
+	public function unassignUser( Tx_Timekeeping_Domain_Model_User $user) {
 		foreach($this->getAssignments() as $assignment) {
 			if($assignment->getUser()->getUID() === $user->getUID()) $this->assignments->detach($assignment);
 		}

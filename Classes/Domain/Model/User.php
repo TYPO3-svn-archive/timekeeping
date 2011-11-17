@@ -4,7 +4,7 @@
  *  Copyright notice
  *
  *  (c) 2011 Alexander Grein <ag@mediaessenz.eu>, MEDIA::ESSENZ
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -32,29 +32,52 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
+class Tx_Timekeeping_Domain_Model_User extends Tx_Extbase_Domain_Model_FrontendUser {
 
-class Tx_Timekeeping_Domain_Repository_FamilyRepository extends Tx_Extbase_Persistence_Repository {
-
-	/**
-	 *
-	 * Finds all families for an index view. The parent family can be specified
-	 * using the $family parameter (NULL by default). All families are ordered by the
-	 * family name in ascending order.
-	 *
-	 * @param  Tx_Timekeeping_Domain_Model_Family $family The parent family
-	 * @return Array<Tx_Timekeeping_Domain_Model_Family>  The result list.
-	 *
+	/*
+	 * ATTRIBUTES
 	 */
 
-	public function findForIndexView ( Tx_Timekeeping_Domain_Model_Family $parent = NULL ) {
+	/**
+	 * assignment
+	 *
+	 * @var Tx_Timekeeping_Domain_Model_Assignment
+	 */
+	protected $assignment;
 
-		$query = $this->createQuery();
-		return $query
-			->matching($query->equals('family', $parent ? $parent : Array(0,NULL) ))
-			->setOrderings(array('name' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING))
-			->execute();
+	/**
+	 * The family of the user.
+	 * @var Tx_Timekeeping_Domain_Model_Family
+	 */
+	protected $family;
 
+	/*
+	 * GETTERS
+	 */
+
+	/*
+	 * Gets the parent family.
+	 * @return Tx_Timekeeping_Domain_Model_Family The family
+	 */
+	public function getFamily() {
+		return $this->family;
 	}
-	
+
+	/*
+	 * SETTER
+	 */
+
+	/**
+	 * Sets the family
+	 *
+	 * @param Tx_Timekeeping_Domain_Model_Family $family
+	 * @return void
+	 */
+	public function setFamily(Tx_Timekeeping_Domain_Model_Family $family) {
+		$this->family = $family;
+	}
+
+
 }
+
 ?>

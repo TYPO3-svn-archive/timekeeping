@@ -105,7 +105,7 @@ class Tx_Timekeeping_Domain_Model_Timeunit extends Tx_Extbase_DomainObject_Abstr
 	/**
 	 *
 	 * Gets the user
-	 * @return Tx_Extbase_Domain_Model_FrontendUser The user
+	 * @return Tx_Timekeeping_Domain_Model_User The user
 	 *
 	 */
 

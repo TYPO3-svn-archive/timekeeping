@@ -21,12 +21,12 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Pi2',
 	array(
-		'Member' => 'index',
+		'User' => 'index',
 		'Timeunit' => 'new,create',
 	),
 	// non-cacheable actions
 	array(
-		'Member' => 'index',
+		'User' => 'index',
 		'Timeunit' => 'new,create',
 	)
 );

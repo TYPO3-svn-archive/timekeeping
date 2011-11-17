@@ -115,5 +115,7 @@ $TCA['tx_timekeeping_domain_model_requiredhours'] = array(
 	),
 );
 
+$TCA['fe_users']['types']['Tx_Timekeeping_Domain_Model_User'] = $TCA['fe_users']['types']['0'];
+array_push($TCA['fe_users']['columns']['tx_extbase_type']['config']['items'], array('LLL:EXT:timekeeping/Resources/Private/Language/locallang_db.xml:tx_timekeeping_domain_model_user', 'Tx_Timekeeping_Domain_Model_User'));
 
 ?>

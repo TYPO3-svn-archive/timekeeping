@@ -150,7 +150,7 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	/**
 	 *
 	 * Gets the currently logged in frontend user.
-	 * @return Tx_Extbase_Domain_Model_FrontendUser The currently logged in frontend
+	 * @return Tx_Timekeeping_Domain_Model_User The currently logged in frontend
 	 *                                              user, or NULL if no user is
 	 *                                              logged in.
 	 *

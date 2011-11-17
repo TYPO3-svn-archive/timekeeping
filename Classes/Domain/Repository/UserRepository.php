@@ -32,29 +32,7 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
+class Tx_Timekeeping_Domain_Repository_UserRepository extends Tx_Extbase_Persistence_Repository {
 
-class Tx_Timekeeping_Domain_Repository_FamilyRepository extends Tx_Extbase_Persistence_Repository {
-
-	/**
-	 *
-	 * Finds all families for an index view. The parent family can be specified
-	 * using the $family parameter (NULL by default). All families are ordered by the
-	 * family name in ascending order.
-	 *
-	 * @param  Tx_Timekeeping_Domain_Model_Family $family The parent family
-	 * @return Array<Tx_Timekeeping_Domain_Model_Family>  The result list.
-	 *
-	 */
-
-	public function findForIndexView ( Tx_Timekeeping_Domain_Model_Family $parent = NULL ) {
-
-		$query = $this->createQuery();
-		return $query
-			->matching($query->equals('family', $parent ? $parent : Array(0,NULL) ))
-			->setOrderings(array('name' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING))
-			->execute();
-
-	}
-	
 }
 ?>

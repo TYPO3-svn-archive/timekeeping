@@ -29,6 +29,7 @@
 			<label index="tx_timekeeping_domain_model_requiredhours">Required Hours</label>
 			<label index="tx_timekeeping_domain_model_requiredhours.hours">Hours</label>
 			<label index="tx_timekeeping_domain_model_requiredhours.cleaning_hours">Cleaning Hours</label>
+			<label index="tx_timekeeping_domain_model_user">Timekeeping User</label>
 		</languageKey>
 	</data>
 </T3locallang>

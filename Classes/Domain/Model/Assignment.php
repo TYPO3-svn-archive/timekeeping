@@ -41,7 +41,7 @@ class Tx_Timekeeping_Domain_Model_Assignment extends Tx_Extbase_DomainObject_Abs
 
 	/**
 	 * fe_user
-	 * @var Tx_Extbase_Domain_Model_FrontendUser
+	 * @var Tx_Timekeeping_Domain_Model_User
 	 * @lazy
 	 */
 	protected $user;
@@ -83,13 +83,13 @@ class Tx_Timekeeping_Domain_Model_Assignment extends Tx_Extbase_DomainObject_Abs
 	 * Creates a new assignment. All arguments are optional, since every model class
 	 * has to implement an empty constructor.
 	 * 
-	 * @param Tx_Extbase_Domain_Model_FrontendUser      $user    The user
+	 * @param Tx_Timekeeping_Domain_Model_User      $user    The user
 	 * @param Tx_Timekeeping_Domain_Model_Family $family The family
 	 * @param Tx_Timekeeping__Domain_Model_Role    $role    The user role
 	 *
 	 * @return void
 	 */
-	public function __construct(Tx_Extbase_Domain_Model_FrontendUser	$user    = NULL,
+	public function __construct(Tx_Timekeeping_Domain_Model_User	$user    = NULL,
 	                              Tx_Timekeeping_Domain_Model_Family 	$family  = NULL,
 	                              Tx_Timekeeping_Domain_Model_Role		$role    = NULL) {
 		//Do not remove the next line: It would break the functionality
@@ -121,7 +121,7 @@ class Tx_Timekeeping_Domain_Model_Assignment extends Tx_Extbase_DomainObject_Abs
 	
 	/**
 	 * Returns the associated user
-	 * @return Tx_Extbase_Domain_Model_FrontendUser
+	 * @return Tx_Timekeeping_Domain_Model_User
 	 */
 	public function getUser(){
 		return $this->user;
@@ -195,10 +195,10 @@ class Tx_Timekeeping_Domain_Model_Assignment extends Tx_Extbase_DomainObject_Abs
 
 	/**
 	 * Sets the associated user
-	 * @param Tx_Extbase_Domain_Model_FrontendUser $user The associated user
+	 * @param Tx_Timekeeping_Domain_Model_User $user The associated user
 	 * @return void
 	 */
-	public function setUser(Tx_Extbase_Domain_Model_FrontendUser $user){
+	public function setUser(Tx_Timekeeping_Domain_Model_User $user){
 		$this->user = $user;
 	}
 

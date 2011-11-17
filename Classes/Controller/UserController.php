@@ -34,7 +34,7 @@
  */
 
 
-class Tx_Timekeeping_Controller_MemberController extends Tx_Timekeeping_Controller_AbstractController {
+class Tx_Timekeeping_Controller_UserController extends Tx_Timekeeping_Controller_AbstractController {
 
 
 	/*
@@ -50,7 +50,7 @@ class Tx_Timekeeping_Controller_MemberController extends Tx_Timekeeping_Controll
 
 	/**
 	 * A frontend user repository instance
-	 * @var Tx_Extbase_Domain_Repository_FrontendUserRepository
+	 * @var Tx_Timekeeping_Domain_Repository_UserRepository
 	 */
 	protected $userRepository;
 
@@ -70,8 +70,9 @@ class Tx_Timekeeping_Controller_MemberController extends Tx_Timekeeping_Controll
 	 */
 
 	protected function initializeAction() {
-		$this->familyRepository  =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_FamilyRepository');
-		$this->userRepository    =& t3lib_div::makeInstance('Tx_Extbase_Domain_Repository_FrontendUserRepository');
+		//$this->familyRepository  =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_FamilyRepository');
+		$this->userRepository    =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_UserRepository');
+		$this->timeunitRepository =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_TimeunitRepository');
 	}
 
 	/**
@@ -81,12 +82,13 @@ class Tx_Timekeeping_Controller_MemberController extends Tx_Timekeeping_Controll
 	 *
 	 */
 	public function indexAction () {
-		$timeunitRepository =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_TimeunitRepository');
 		$user = $this->getCurrentFeUser();
 		// how do i get the family of the current user?
-		$family = 1;
+		//$family = 1;
+		$family = $user->getFamily();
+		//t3lib_div::debug($user->getFamily()->getUid());
 		if($user === NULL) throw new Tx_Timekeeping_Domain_Exception_NoLoginException();
-		$this->view->assign('timeunits', $timeunitRepository->getTimeunitsForUser($user))
+		$this->view->assign('timeunits', $this->timeunitRepository->getTimeunitsForUser($user))
 				   ->assign('user', $user)
 				   ->assign('family', $family);
 	}
@@ -94,10 +96,10 @@ class Tx_Timekeeping_Controller_MemberController extends Tx_Timekeeping_Controll
 	/**
 	 * action show
 	 *
-	 * @param Tx_Extbase_Domain_Model_FrontendUser $user The user that is to be displayed.
+	 * @param Tx_Timekeeping_Domain_Model_User $user The user that is to be displayed.
 	 * @return void
 	 */
-	public function showAction(Tx_Extbase_Domain_Model_FrontendUser $user) {
+	public function showAction(Tx_Timekeeping_Domain_Model_User $user) {
 		$this->view->assign('user', $user);
 	}
 
@@ -109,20 +111,17 @@ class Tx_Timekeeping_Controller_MemberController extends Tx_Timekeeping_Controll
 	/**
 	 *
 	 * Gets the currently logged in frontend user.
-	 * @return Tx_Extbase_Domain_Model_FrontendUser The currently logged in frontend
+	 * @return Tx_Timekeeping_Domain_Model_User The currently logged in frontend
 	 *                                              user, or NULL if no user is
 	 *                                              logged in.
 	 *
 	 */
 
 	protected function getCurrentFeUser() {
-		$userRepository = new Tx_Extbase_Domain_Repository_FrontendUserRepository();
 		return intval($GLOBALS['TSFE']->fe_user->user['uid']) > 0
-			? $userRepository->findByUid( intval($GLOBALS['TSFE']->fe_user->user['uid']) )
+			? $this->userRepository->findByUid( intval($GLOBALS['TSFE']->fe_user->user['uid']) )
 			: NULL;
 	}
-
-
 
 }
 ?>

@@ -1,48 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/Classes/Controller/AbstractController.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Controller/BackendController.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Controller/MemberController.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Controller/TimeunitController.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Exception/AbstractException.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Exception/NoFamilyMemberException.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Exception/NoLoginException.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Model/Assignment.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Model/Family.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Model/RequiredHours.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Model/Role.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Model/Timeunit.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Repository/FamilyRepository.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Repository/RequiredHoursRepository.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Repository/RoleRepository.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Domain/Repository/TimeunitRepository.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/ViewHelpers/CleaningWorkViewHelper.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/ViewHelpers/Form/UserRoleViewHelper.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/ViewHelpers/TimeFormatViewHelper.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Configuration/ExtensionBuilder/settings.yaml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Configuration/TCA/Assignment.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Configuration/TCA/Family.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Configuration/TCA/RequiredHours.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Configuration/TCA/Role.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Configuration/TCA/Timeunit.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ExtensionBuilder.json" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Layouts/main.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Partials/exception.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Partials/familyForm.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Partials/familyList.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Partials/formErrors.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Backend/index.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Default/error.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Family/show.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Member/index.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Timeunit/index.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Timeunit/new.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Public/Css/basics.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ext_emconf.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ext_localconf.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ext_tables.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ext_tables.sql" charset="UTF-8" />
-  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
 </project>
 
