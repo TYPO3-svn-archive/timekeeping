@@ -30,5 +30,11 @@
 				<td><tk:cleaningWork amount="{timeunit.cleaning}" /></td>
 			</tr>
 		</f:for>
+		<tr class="summary">
+			<td></td>
+			<td>Gesamt</td>
+			<td><tk:timeFormat amount="{assignment.workedTime}" /></td>
+			<td><tk:timeFormat amount="{assignment.workedCleaningTime}" /></td>
+		</tr>
 	</table>
 </f:section>

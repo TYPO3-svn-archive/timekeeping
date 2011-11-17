@@ -9,3 +9,9 @@
 #timekeeping-content td {
     padding: 0 5px 5px 0;
 }
+
+#timekeeping-content tr.summary {
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+    margin-top: 5px;
+}

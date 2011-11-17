@@ -104,7 +104,8 @@ class Tx_Timekeeping_Controller_UserController extends Tx_Timekeeping_Controller
 		if($user === NULL) throw new Tx_Timekeeping_Domain_Exception_NoLoginException();
 		$this->view->assign('timeunits', $this->timeunitRepository->getTimeunitsForUser($user))
 				   ->assign('user', $user)
-				   ->assign('family', $family);
+				   ->assign('family', $family)
+				   ->assign('assignment', $assignment);
 	}
 
 	/**

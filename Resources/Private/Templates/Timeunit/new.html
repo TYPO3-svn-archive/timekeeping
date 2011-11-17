@@ -46,9 +46,11 @@
 				<td><f:translate key="Timeunit_New_Cleaning" /></td>
 				<td><f:form.checkbox property="cleaning" value="1" /></td>
 			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><f:form.submit value="{f:translate(key:'Timeunit_New_Save')}" /></td>
+			</tr>
 		</table>
-
-		<f:form.submit value="{f:translate(key:'Timeunit_New_Save')}" />
 		<f:form.hidden name="family" value="{family}" />
 	</f:form>
 </f:section>
