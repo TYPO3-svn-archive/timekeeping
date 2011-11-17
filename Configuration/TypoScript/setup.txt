@@ -10,3 +10,11 @@ plugin.tx_timekeeping {
 }
 
 page.includeCSS.timekeeping_basics = {$plugin.tx_timekeeping.css.filePath}
+
+config.tx_extbase.persistence.classes {
+    Tx_Timekeeping_Domain_Model_User {
+        mapping {
+            tableName = fe_users
+        }
+    }
+}
