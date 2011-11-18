@@ -3,7 +3,6 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/Classes/Controller/AbstractController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Controller/BackendController.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Classes/Controller/MemberController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Controller/TimeunitController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Exception/AbstractException.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Classes/Domain/Exception/NoFamilyMemberException.php" charset="UTF-8" />
@@ -36,7 +35,6 @@
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Backend/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Default/error.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Family/show.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Member/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Timeunit/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Timeunit/new.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Public/Css/basics.css" charset="UTF-8" />

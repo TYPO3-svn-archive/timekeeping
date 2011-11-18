@@ -50,18 +50,27 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 	 */
 	protected $familyRepository;
 
+	public function injectFamilyRepository(Tx_Timekeeping_Domain_Repository_FamilyRepository $familyRepository){
+					$this->familyRepository = $familyRepository;
+	}
 	/**
 	 * A user role repository instance
 	 * @var Tx_Timekeeping_Domain_Repository_RoleRepository
 	 */
 	protected $roleRepository;
 
+	public function injectRoleRepository(Tx_Timekeeping_Domain_Repository_RoleRepository $roleRepository){
+					$this->roleRepository = $roleRepository;
+	}
 	/**
 	 * A frontend user repository instance
-	 * @var Tx_Extbase_Domain_Repository_FrontendUserRepository
+	 * @var Tx_Timekeeping_Domain_Repository_UserRepository
 	 */
 	protected $userRepository;
 
+	public function injectUserRepository(Tx_Timekeeping_Domain_Repository_UserRepository $userRepository){
+					$this->userRepository = $userRepository;
+	}
 
 	/*
 	 * ACTION METHODS
@@ -78,9 +87,6 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 	 */
 
 	protected function initializeAction() {
-		$this->familyRepository  =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_FamilyRepository');
-		$this->roleRepository    =& t3lib_div::makeInstance('Tx_Timekeeping_Domain_Repository_RoleRepository');
-		$this->userRepository    =& t3lib_div::makeInstance('Tx_Extbase_Domain_Repository_FrontendUserRepository');
 	}
 
 	/**
@@ -115,7 +121,8 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 	 *
 	 */
 
-	public function newAction ( Tx_Timekeeping_Domain_Model_Family $family = NULL ) {
+	public function newAction(Tx_Timekeeping_Domain_Model_Family $family = NULL) {
+		t3lib_div::devlog('blub');
 		$this->view->assign('family' , $family)
 				   ->assign('families', array_merge(Array(NULL), $this->familyRepository->findAll()))
 				   ->assign('users'   , $this->userRepository->findAll())
