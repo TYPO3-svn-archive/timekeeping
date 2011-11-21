@@ -1,0 +1,44 @@
+{namespace tk=Tx_Timekeeping_ViewHelpers}
+
+<f:form action="{action}" object="{timeunit}" name="timeunit">
+
+	<f:form.errors for="timeunit">
+		<div style="background-color: #fdd; padding: 12px;">
+			<f:if condition="{error.errors}"><f:then>
+				<f:for each="{error.errors}" as="fieldError">
+					<div><f:translate key="Timeunit_Error_{error.propertyName}_{fieldError.code}" default="{error.propertyName}_{fieldError.code}" /></div>
+				</f:for>
+			</f:then><f:else>
+				<div><f:translate key="Timeunit_Error_{error.code}" default="{error.code}" /></div>
+			</f:else></f:if>
+		</div>
+	</f:form.errors>
+
+	<table>
+		<tr>
+			<th><f:translate key="Timeunit_Form_Family" /></th>
+			<td>{family.name}</td>
+		</tr>
+		<tr>
+			<th><f:translate key="Timeunit_Form_DateOfWork" /></th>
+			<td><f:form.textfield property="dateOfWork" id="dateofwork" /></td>
+		</tr>
+		<tr>
+			<th><f:translate key="Timeunit_Form_Duration" /></th>
+			<td><f:form.textfield property="duration" id="duration" /></td>
+		</tr>
+		<tr>
+			<th><f:translate key="Timeunit_Form_Description" /></th>
+			<td><f:form.textarea property="description" rows="5" cols="80" /></td>
+		</tr>
+		<tr>
+			<th><f:translate key="Timeunit_Form_Cleaning" /></th>
+			<td><f:form.checkbox property="cleaning" value="1" /></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><f:form.submit value="{f:translate(key:'Timeunit_Form_Save')}" /></td>
+		</tr>
+	</table>
+	<f:form.hidden name="family" value="{family}" />
+</f:form>

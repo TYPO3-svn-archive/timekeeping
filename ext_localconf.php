@@ -8,12 +8,12 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	'Pi1',
 	array(
 		'Family' => 'index,show,new,create,delete,edit,update',
-		'Timeunit' => 'index,new,create',
+		'Timeunit' => 'index,new,create,edit,update',
 	),
 	// non-cacheable actions
 	array(
 		'Family' => 'index,show,new,create,delete,edit,update',
-		'Timeunit' => 'index,new,create',
+		'Timeunit' => 'index,new,create,edit,update',
 	)
 );
 
@@ -22,12 +22,12 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	'Pi2',
 	array(
 		'User' => 'index',
-		'Timeunit' => 'new,create',
+		'Timeunit' => 'new,create,edit,update',
 	),
 	// non-cacheable actions
 	array(
 		'User' => 'index',
-		'Timeunit' => 'new,create',
+		'Timeunit' => 'new,create,edit,update',
 	)
 );
 ?>

@@ -8,24 +8,7 @@
 </f:section>
 
 <f:section name="content">
-	<table>
-		<tr>
-			<th><f:translate key="Timeunit_Index_List_Member" /></th>
-			<th><f:translate key="Timeunit_Index_List_DateOfWork" /></th>
-			<th><f:translate key="Timeunit_Index_List_Description" /></th>
-			<th><f:translate key="Timeunit_Index_List_Duration" /></th>
-			<th><f:translate key="Timeunit_Index_List_Cleaning" /></th>
-		</tr>
-		<f:for each="{timeunits}" as="timeunit">
-			<tr>
-				<td>{timeunit.assignment.user.name} ({timeunit.assignment.role.name})</td>
-				<td><f:format.date format="d.m.Y">{timeunit.dateOfWork}</f:format.date></td>
-				<td>{timeunit.description}</td>
-				<td><tk:timeFormat amount="{timeunit.duration}" /></td>
-				<td><tk:cleaningWork amount="{timeunit.cleaning}" /></td>
-			</tr>
-		</f:for>
-	</table>
+	<f:render partial="timeunitList" arguments="{timeunits : timeunits, family: family, assignment : assignment}" />
 </f:section>
 
 <!-- MENU -->

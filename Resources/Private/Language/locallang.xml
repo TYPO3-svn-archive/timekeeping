@@ -37,6 +37,8 @@
 			<label index="Family_New_Title">New family</label>
 			<label index="Family_Form_Parent">Parent family</label>
 			<label index="Family_Form_Name">Name</label>
+			<label index="Family_Form_StartDate">Start date</label>
+			<label index="Family_Form_EndDate">End date</label>
 			<label index="Family_Form_Members">Members</label>
 			<label index="Family_Form_Save">Save</label>
 				
@@ -55,15 +57,15 @@
 			<label index="Timeunit_Index_List_Duration">Worked time</label>
 			<label index="Timeunit_Index_List_Cleaning">Cleaning</label>
 
-				<!-- TIMEUNIT: NEW ACTION -->
-			<label index="Timeunit_New_Title">New timeunit: %s</label>
+				<!-- TIMEUNIT: NEW/EDIT ACTION -->
+			<label index="Timeunit_Edit_Title">New timeunit: %s</label>
 			<label index="Timeunit_New_User">User</label>
-			<label index="Timeunit_New_Family">Family</label>
-			<label index="Timeunit_New_DateOfWork">Date</label>
-			<label index="Timeunit_New_Duration">Worked time</label>
-			<label index="Timeunit_New_Description">Description</label>
-			<label index="Timeunit_New_Cleaning">Cleaning</label>
-			<label index="Timeunit_New_Save">Save</label>
+			<label index="Timeunit_Form_Family">Family</label>
+			<label index="Timeunit_Form_DateOfWork">Date</label>
+			<label index="Timeunit_Form_Duration">Worked time</label>
+			<label index="Timeunit_Form_Description">Description</label>
+			<label index="Timeunit_Form_Cleaning">Cleaning</label>
+			<label index="Timeunit_Form_Save">Save</label>
 
 				<!-- TIMEUNIT ERRORS -->
 			<label index="Timeunit_Error_comment_1221560718">Please specify a comment for this timeunit.</label>
@@ -117,6 +119,8 @@
 			<label index="Family_New_Title">Neue Familie</label>
 			<label index="Family_Form_Parent">Eltern Familie</label>
 			<label index="Family_Form_Name">Name</label>
+			<label index="Family_Form_StartDate">Beitrittsdatum</label>
+			<label index="Family_Form_EndDate">Ausscheidungsdatum</label>
 			<label index="Family_Form_Members">Mitglieder</label>
 			<label index="Family_Form_Save">Speichern</label>
 
@@ -124,7 +128,7 @@
 			<label index="Family_Error_name_1238108067">Bitte geben Sie mindestens drei Buchstaben als Familiennamen ein.</label>
 
 			<!-- MEMBER: SHOW ACTION -->
-			<label index="Member_Show_Title">Arbeitszeiten von: %s</label>
+			<label index="Member_Show_Title">Arbeitszeiten von %s</label>
 
 				<!-- TIMEUNIT: INDEX ACTION -->
 			<label index="Timeunit_Index_Title">Arbeitszeiten: %s</label>
@@ -135,22 +139,22 @@
 			<label index="Timeunit_Index_List_Duration">Arbeitszeit</label>
 			<label index="Timeunit_Index_List_Cleaning">Putzen</label>
 
-				<!-- TIMEUNIT: NEW ACTION -->
-			<label index="Timeunit_New_Title">Neue Arbeitszeit: %s</label>
+				<!-- TIMEUNIT: NEW/EDIT ACTION -->
+			<label index="Timeunit_Edit_Title">Neue Arbeitszeit: %s</label>
 			<label index="Timeunit_New_User">Mitglied</label>
-			<label index="Timeunit_New_Family">Familie</label>
-			<label index="Timeunit_New_DateOfWork">Datum</label>
-			<label index="Timeunit_New_Duration">Arbeitszeit</label>
-			<label index="Timeunit_New_Description">Beschreibung</label>
-			<label index="Timeunit_New_Cleaning">Putzen</label>
-			<label index="Timeunit_New_Save">Save</label>
+			<label index="Timeunit_Form_Family">Familie</label>
+			<label index="Timeunit_Form_DateOfWork">Datum</label>
+			<label index="Timeunit_Form_Duration">Arbeitszeit</label>
+			<label index="Timeunit_Form_Description">Beschreibung</label>
+			<label index="Timeunit_Form_Cleaning">Putzen</label>
+			<label index="Timeunit_Form_Save">Speichern</label>
 
 				<!-- TIMEUNIT ERRORS -->
 			<label index="Timeunit_Error_comment_1221560718">Please specify a comment for this timeunit.</label>
 			<label index="Timeunit_Error_1265721025">The stop time needs to be after the start time.</label>
 
 				<!-- VIEWHELPERS: TIME UNITS -->
-			<label index="ViewHelper_Unit_Hours">Stunden</label>
+			<label index="ViewHelper_Unit_Hours">h</label>
 
 			<!-- VIEWHELPERS: CLEANING WORK -->
 			<label index="ViewHelper_Cleaning_Yes">Ja</label>

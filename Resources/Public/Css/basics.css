@@ -4,10 +4,12 @@
 #timekeeping-content th {
     font-weight: bold;
     padding: 0 5px 5px 0;
+    vertical-align: text-top;
 }
 
 #timekeeping-content td {
     padding: 0 5px 5px 0;
+    vertical-align: text-top;
 }
 
 #timekeeping-content tr.summary {

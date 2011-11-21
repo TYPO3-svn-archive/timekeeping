@@ -15,26 +15,5 @@
 </f:section>
 
 <f:section name="content">
-	<table>
-		<tr>
-			<th><f:translate key="Timeunit_Index_List_DateOfWork" /></th>
-			<th><f:translate key="Timeunit_Index_List_Description" /></th>
-			<th><f:translate key="Timeunit_Index_List_Duration" /></th>
-			<th><f:translate key="Timeunit_Index_List_Cleaning" /></th>
-		</tr>
-		<f:for each="{timeunits}" as="timeunit">
-			<tr>
-				<td><f:format.date format="d.m.Y">{timeunit.dateOfWork}</f:format.date></td>
-				<td>{timeunit.description}</td>
-				<td><tk:timeFormat amount="{timeunit.duration}" /></td>
-				<td><tk:cleaningWork amount="{timeunit.cleaning}" /></td>
-			</tr>
-		</f:for>
-		<tr class="summary">
-			<td></td>
-			<td>Gesamt</td>
-			<td><tk:timeFormat amount="{assignment.workedTime}" /></td>
-			<td><tk:timeFormat amount="{assignment.workedCleaningTime}" /></td>
-		</tr>
-	</table>
+	<f:render partial="timeunitUserList" arguments="{timeunits : timeunits, family : family, assignment : assignment, user : user}" />
 </f:section>

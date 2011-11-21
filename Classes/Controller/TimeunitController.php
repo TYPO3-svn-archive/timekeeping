@@ -160,6 +160,55 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	}
 
 
+	/**
+	 * action edit
+	 *
+	 * @param Tx_Timekeeping_Domain_Model_Family $family The family the timeunit is assigned to
+	 * @param Tx_Timekeeping_Domain_Model_Timeunit $timeunit The timeunit to edit
+	 * @return void
+	 * @dontvalidate $family
+	 */
+	public function editAction(Tx_Timekeeping_Domain_Model_Family $family,
+							   Tx_Timekeeping_Domain_Model_Timeunit $timeunit) {
+			# Get the user assignment and throw an exception if the current user is not a
+			# member of the selected family.
+		$user       = $this->getCurrentFeUser();
+		$assignment = $user ? $family->getAssignmentForUser($user) : NULL;
+		if($assignment === NULL) throw new Tx_Timekeeping_Domain_Exception_NoFamilyMemberException();
+
+			# Add the new timeunit to the family assingment. The $assignment property in
+			# the timeunit object is set automatically.
+		$this->view->assign('family', $family)
+		           ->assign('timeunit', $timeunit)
+				   ->assign('user', $user)
+				   ->assign('assignment', $assignment);
+	}
+
+	/**
+	 *
+	 * The update action. Updates an existing timeunit in the database.
+	 *
+	 * @param Tx_Timekeeping_Domain_Model_Family $family The family
+	 * @param Tx_Timekeeping_Domain_Model_Timeunit $timeunit   The timeunit to update.
+	 * @return void
+	 * @dontverifyrequesthash
+	 *
+	 */
+
+	public function updateAction( Tx_Timekeeping_Domain_Model_Family $family,
+								  Tx_Timekeeping_Domain_Model_Timeunit $timeunit) {
+		$user       = $this->getCurrentFeUser();
+		$assignment = $user ? $family->getAssignmentForUser($user) : NULL;
+		if($assignment === NULL) throw new Tx_Timekeeping_Domain_Exception_NoFamilyMemberException();
+
+		$this->timeunitRepository->update($timeunit);
+		$this->flashMessages->add("Der Eintrag wurde erfolgreich bearbeitet.");
+
+		$this->redirect('index', NULL, NULL, array('timeunit' => $timeunit, 'family' => $family));
+	}
+
+
+
 	/*
 	 * HELPER METHODS
 	 */

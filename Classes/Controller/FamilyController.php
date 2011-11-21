@@ -122,10 +122,9 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 	 */
 
 	public function newAction(Tx_Timekeeping_Domain_Model_Family $family = NULL) {
-		t3lib_div::devlog('blub');
 		$this->view->assign('family' , $family)
 				   ->assign('families', array_merge(Array(NULL), $this->familyRepository->findAll()))
-				   ->assign('users'   , $this->userRepository->findAll())
+				   ->assign('users'   , $this->userRepository->sortByCol(array('username' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING)))
 				   ->assign('roles'   , $this->roleRepository->findAll());
 	}
 
@@ -170,7 +169,7 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 
 	/**
 	 *
-	 * The update action. Updates an existing project in the database.
+	 * The update action. Updates an existing family in the database.
 	 *
 	 * @param Tx_Timekeeping_Domain_Model_Family $family The family
 	 * @param array $assignments                                 An array of users and roles that are to be assigned to this family.

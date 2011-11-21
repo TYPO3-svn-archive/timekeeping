@@ -34,5 +34,19 @@
  */
 class Tx_Timekeeping_Domain_Repository_UserRepository extends Tx_Extbase_Persistence_Repository {
 
+	/**
+	 * Sort by Cols
+	 * @param array $col col
+	 * @return object
+	 * */
+	public function sortByCol($col) {
+		$query = $this->createQuery();
+		$query->getQuerySettings()->setRespectSysLanguage(FALSE);
+		//Sortiert alle angegebenen Spalten
+		$query->matching()->setOrderings($col);
+		$result = $query->execute();
+		return $result;
+	}
+
 }
 ?>

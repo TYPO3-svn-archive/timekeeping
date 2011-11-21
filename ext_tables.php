@@ -1,9 +1,9 @@
 <?php
 if (!defined ('TYPO3_MODE')) die ('Access denied.');
 
-Tx_Extbase_Utility_Extension::registerPlugin ( $_EXTKEY, 'Pi1', ' A timetracking extension (Administation)' );
-Tx_Extbase_Utility_Extension::registerPlugin ( $_EXTKEY, 'Pi2', ' A timetracking extension (User)' );
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Timetracking');
+Tx_Extbase_Utility_Extension::registerPlugin ( $_EXTKEY, 'Pi1', ' A timekeeping extension (Administation)' );
+Tx_Extbase_Utility_Extension::registerPlugin ( $_EXTKEY, 'Pi2', ' A timekeeping extension (User)' );
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Timekeeping');
 
 If ( TYPO3_MODE === 'BE' )
     Tx_Extbase_Utility_Extension::registerModule ( $_EXTKEY,
