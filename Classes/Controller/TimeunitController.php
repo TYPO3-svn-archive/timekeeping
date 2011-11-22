@@ -80,7 +80,6 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	 */
 
 	public function initializeAction() {
-
 	}
 
 
@@ -207,7 +206,23 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 		$this->redirect('index', NULL, NULL, array('timeunit' => $timeunit, 'family' => $family));
 	}
 
+	/**
+	 *
+	 * The delete action. Deletes an existing family from the database.
+	 *
+	 * @param Tx_Timekeeping_Domain_Model_Family $family The family
+	 * @param Tx_Timekeeping_Domain_Model_Timeunit $timeunit The timeunit that is to be deleted
+	 * @return void
+	 *
+	 */
 
+	public function deleteAction( Tx_Timekeeping_Domain_Model_Family $family,
+								  Tx_Timekeeping_Domain_Model_Timeunit $timeunit ) {
+		$this->timeunitRepository->remove($timeunit);
+		$this->flashMessages->add("Der Eintrag wurde erfolgreich gelöscht.");
+
+		$this->redirect('index', NULL, NULL, array('family' => $family));
+	}
 
 	/*
 	 * HELPER METHODS

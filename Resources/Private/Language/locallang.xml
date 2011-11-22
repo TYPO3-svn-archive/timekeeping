@@ -56,6 +56,7 @@
 			<label index="Timeunit_Index_List_Description">Description</label>
 			<label index="Timeunit_Index_List_Duration">Worked time</label>
 			<label index="Timeunit_Index_List_Cleaning">Cleaning</label>
+			<label index="Timeunit_Index_List_Delete">Delete</label>
 
 				<!-- TIMEUNIT: NEW/EDIT ACTION -->
 			<label index="Timeunit_Edit_Title">New timeunit: %s</label>
@@ -95,14 +96,14 @@
 			<label index="Family_Index_Members">Mitglieder</label>
 			<label index="Family_Index_Members_Unit">Mitglieder</label>
 			<label index="Family_Index_WorkedTime">Geleistete Arbeitsstunden</label>
-			<label index="Family_Index_WorkedCleaningTime">(Putzen)</label>
+			<label index="Family_Index_WorkedCleaningTime">Davon Putzen</label>
 			<label index="Family_Index_Action_New">Neue Familie anlegen</label>
 
 				<!-- FAMILY: SHOW ACTION -->
-			<label index="Family_Show_Title">Details: %s</label>
-			<label index="Family_Show_Action_Back">Zurück</label>
+			<label index="Family_Show_Title">Details Familie %s</label>
+			<label index="Family_Show_Action_Back">« Zurück</label>
 			<label index="Family_Show_Action_Edit">Bearbeiten</label>
-			<label index="Family_Show_Action_Delete">Löschen</label>
+			<label index="Family_Show_Action_Delete">Familie löschen</label>
 			<label index="Family_Show_Action_NewTimeunit">Neuen Zeiteintrag hinzufügen</label>
 			<label index="Family_Show_Action_ListTimeunits">Liste aller Zeiteinträge</label>
 			<label index="Family_Show_StartDate">Beitrittsdatum</label>
@@ -131,16 +132,17 @@
 			<label index="Member_Show_Title">Arbeitszeiten von %s</label>
 
 				<!-- TIMEUNIT: INDEX ACTION -->
-			<label index="Timeunit_Index_Title">Arbeitszeiten: %s</label>
+			<label index="Timeunit_Index_Title">Arbeitszeiten von Familie %s</label>
 			<label index="Timeunit_Index_Action_Back">Zurück</label>
 			<label index="Timeunit_Index_List_Member">Mitglied</label>
 			<label index="Timeunit_Index_List_DateOfWork">Datum</label>
 			<label index="Timeunit_Index_List_Description">Beschreibung</label>
 			<label index="Timeunit_Index_List_Duration">Arbeitszeit</label>
 			<label index="Timeunit_Index_List_Cleaning">Putzen</label>
+			<label index="Timeunit_Index_List_Delete">Löschen</label>
 
 				<!-- TIMEUNIT: NEW/EDIT ACTION -->
-			<label index="Timeunit_Edit_Title">Neue Arbeitszeit: %s</label>
+			<label index="Timeunit_Edit_Title">Neue Arbeitszeit von %s</label>
 			<label index="Timeunit_New_User">Mitglied</label>
 			<label index="Timeunit_Form_Family">Familie</label>
 			<label index="Timeunit_Form_DateOfWork">Datum</label>
@@ -150,7 +152,7 @@
 			<label index="Timeunit_Form_Save">Speichern</label>
 
 				<!-- TIMEUNIT ERRORS -->
-			<label index="Timeunit_Error_comment_1221560718">Please specify a comment for this timeunit.</label>
+			<label index="Timeunit_Error_comment_1221560718">Bitte geben Sie eine Beschreibung ein.</label>
 			<label index="Timeunit_Error_1265721025">The stop time needs to be after the start time.</label>
 
 				<!-- VIEWHELPERS: TIME UNITS -->

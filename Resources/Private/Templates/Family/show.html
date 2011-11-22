@@ -12,9 +12,9 @@
 	<ul>
 		<li><f:link.action action="index"><f:translate key="Family_Show_Action_Back" /></f:link.action></li>
 		<li><f:link.action action="edit" arguments="{family : family}"><f:translate key="Family_Show_Action_Edit" /></f:link.action></li>
-		<li><f:link.action action="delete" arguments="{family : family}"><f:translate key="Family_Show_Action_Delete" /></f:link.action></li>
-		<li><f:link.action action="new" controller="Timeunit" arguments="{family : family}"><f:translate key="Family_Show_Action_NewTimeunit" /></f:link.action></li>
 		<li><f:link.action action="index" controller="Timeunit" arguments="{family : family}"><f:translate key="Family_Show_Action_ListTimeunits" /></f:link.action></li>
+		<li><f:link.action action="new" controller="Timeunit" arguments="{family : family}"><f:translate key="Family_Show_Action_NewTimeunit" /></f:link.action></li>
+		<li><f:link.action class="delete" action="delete" arguments="{family : family}"><f:translate key="Family_Show_Action_Delete" /></f:link.action></li>
 	</ul>
 </f:section>
 
@@ -45,7 +45,7 @@
 		</tr>
 		<f:for each="{family.assignments}" as="assignment">
 			<tr>
-				<td>{assignment.user.name}</td>
+				<td><f:if condition="{assignment.user.name}"><f:then>{assignment.user.name}</f:then><f:else>{assignment.user.username}</f:else></f:if></td>
 				<td>{assignment.role.name}</td>
 				<td><tk:timeFormat amount="{assignment.workedTime}" /></td>
 				<td><tk:timeFormat amount="{assignment.workedCleaningTime}" /></td>
