@@ -33,7 +33,7 @@
  */
 class Tx_Timekeeping_Domain_Exception_NoFamilyMemberException extends Tx_Timekeeping_Domain_Exception_AbstractException {
 	protected $code = 1266412844;
-	protected $message = "You are no member of this family!";
+	protected $message = "Sie sind kein Mitglied dieser Familie!";
 }
 
 ?>

@@ -30,6 +30,7 @@
     <file url="file://$PROJECT_DIR$/ExtensionBuilder.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Layouts/main.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Partials/exception.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Resources/Private/Partials/exception_full.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Partials/familyForm.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Partials/familyList.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Partials/formErrors.html" charset="UTF-8" />

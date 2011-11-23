@@ -87,9 +87,6 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 	 */
 
 	protected function initializeAction() {
-		$this->additionalHeaderData = '
-		<script type="text/javascript" src="typo3conf/ext/timekeeping/Resources/Public/Js/test.js"></script>
-		';
 	}
 
 	/**
