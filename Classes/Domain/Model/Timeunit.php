@@ -119,7 +119,7 @@ class Tx_Timekeeping_Domain_Model_Timeunit extends Tx_Extbase_DomainObject_Abstr
 	 * @return DateTime $dateOfWork
 	 */
 	public function getDateOfWork() {
-		return $this->dateOfWork;
+		return $this->dateOfWork->format('d.m.Y');
 	}
 
 	/**
