@@ -1,5 +1,5 @@
 {namespace tk=Tx_Timekeeping_ViewHelpers}
-<table>
+<table class="tx-timekeeping-timeunits">
 	<tr>
 		<th><f:translate key="Timeunit_Index_List_DateOfWork" />{action}</th>
 		<th><f:translate key="Timeunit_Index_List_Description" /></th>
@@ -17,7 +17,7 @@
 		</tr>
 	</f:for>
 	<tr class="summary">
-		<td colspan="2">Gesamt</td>
+		<td colspan="2"></td>
 		<td style="text-align: right;"><tk:timeFormat amount="{assignment.workedTime}" /></td>
 		<td style="text-align: right;"><tk:timeFormat amount="{assignment.workedCleaningTime}" /></td>
 		<td></td>

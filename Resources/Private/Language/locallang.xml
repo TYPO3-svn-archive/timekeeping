@@ -133,7 +133,7 @@
 
 				<!-- TIMEUNIT: INDEX ACTION -->
 			<label index="Timeunit_Index_Title">Arbeitszeiten von Familie %s</label>
-			<label index="Timeunit_Index_Action_Back">Zurück</label>
+			<label index="Timeunit_Index_Action_Back">« Zurück</label>
 			<label index="Timeunit_Index_List_Member">Mitglied</label>
 			<label index="Timeunit_Index_List_DateOfWork">Datum</label>
 			<label index="Timeunit_Index_List_Description">Beschreibung</label>
