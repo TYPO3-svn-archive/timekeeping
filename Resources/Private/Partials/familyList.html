@@ -5,6 +5,8 @@
 			<tr>
 				<th><f:translate key="Family_Index_Name" /></th>
 				<th><f:translate key="Family_Index_Members" /></th>
+				<th><f:translate key="Family_Index_StartDate" /></th>
+				<th><f:translate key="Family_Index_EndDate" /></th>
 				<th style="text-align: right;"><f:translate key="Family_Index_WorkedTime" /></th>
 				<th style="text-align: right;"><f:translate key="Family_Index_WorkedCleaningTime" /></th>
 			</tr>
@@ -13,7 +15,9 @@
 		<f:for each="{families}" as="family">
 			<tr>
 				<td><f:link.action action="show" arguments="{ family : family }">{family.name}</f:link.action></td>
-				<td><f:count subject="{family.assignments}" /> <f:translate key="Family_Index_Members_Unit" /></td>
+				<td style="text-align: center;"><f:count subject="{family.assignments}" /></td>
+				<td>{family.start}</td>
+				<td>{family.end}</td>
 				<td style="text-align: right;"><tk:timeFormat amount="{family.workedTime}" /></td>
 				<td style="text-align: right;"><tk:timeFormat amount="{family.workedCleaningTime}" /></td>
 			</tr>

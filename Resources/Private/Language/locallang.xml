@@ -12,6 +12,8 @@
 			<label index="Family_Index_Name">Name</label>
 			<label index="Family_Index_Members">Members</label>
 			<label index="Family_Index_Members_Unit">Members</label>
+			<label index="Family_Index_StartDate">Start date</label>
+			<label index="Family_Index_EndDate">End date</label>
 			<label index="Family_Index_WorkedTime">Worked time</label>
 			<label index="Family_Index_WorkedCleaningTime">Cleaning time</label>
 			<label index="Family_Index_Action_New">New Family</label>
@@ -97,8 +99,10 @@
 			<label index="Family_Index_Name">Name</label>
 			<label index="Family_Index_Members">Mitglieder</label>
 			<label index="Family_Index_Members_Unit">Mitglieder</label>
-			<label index="Family_Index_WorkedTime">Geleistete Arbeitsstunden</label>
-			<label index="Family_Index_WorkedCleaningTime">Davon Putzen</label>
+			<label index="Family_Index_StartDate">Beitrittsdatum</label>
+			<label index="Family_Index_EndDate">Ausscheidungsdatum</label>
+			<label index="Family_Index_WorkedTime">Arbeitsstunden</label>
+			<label index="Family_Index_WorkedCleaningTime">Putzen</label>
 			<label index="Family_Index_Action_New">Neue Familie anlegen</label>
 
 				<!-- FAMILY: SHOW ACTION -->
