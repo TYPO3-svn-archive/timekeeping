@@ -20,31 +20,35 @@
 		<tr>
 			<th><label for="start"><f:translate key="Family_Form_StartDate" /></label></th>
 			<td>
-				<f:form.textfield class="timekeeping-formfield" placeholder="tt.mm.jjjj" property="start" />
+				<f:form.textfield class="timekeeping-formfield datepicker" property="start" />
 			</td>
 		</tr>
 		<tr>
 			<th><label for="end"><f:translate key="Family_Form_EndDate" /></label></th>
 			<td>
-				<f:form.textfield class="timekeeping-formfield" placeholder="tt.mm.jjjj" property="end" />
+				<f:form.textfield class="timekeeping-formfield datepicker" property="end" />
 			</td>
 		</tr>
 		<tr>
 			<th><f:translate key="Family_Form_Members" /></th>
 			<td>
-				<table>
-					<tr>
-						<th>Name</th>
-						<th>Rolle</th>
-					</tr>
+				<table class="tx-timekeeping-timeunits">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Rolle</th>
+						</tr>
+					</thead>
+					<tbody>
 					<f:for each="{users}" as="user">
 						<tr>
-							<td>{user.username}</td>
+							<td><f:if condition='{user.name}'><f:then>{user.name}</f:then><f:else>{user.username}</f:else></f:if></td>
 							<td>
 								<tk:form.userRole name="assignments" family="{family}" user="{user}" options="{roles}" />
 							</td>
 						</tr>
 					</f:for>
+					</tbody>
 				</table>
 			</td>
 		</tr>

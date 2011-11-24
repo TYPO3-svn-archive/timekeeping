@@ -86,6 +86,8 @@
 			<label index="Error_Title">Error</label>
 			<label index="Error_Subtitle">Error #%d</label>
 			<label index="Error_1266412844">You have to be member of a family to create timeunits!</label>
+
+			<label index="constants.timekeeping_javascript_files">Javascript Files</label>
 			
 		</languageKey>
 		<languageKey index="de" type="array">

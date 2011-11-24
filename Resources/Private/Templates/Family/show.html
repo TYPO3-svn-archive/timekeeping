@@ -37,12 +37,15 @@
 		<!-- MEMBERS -->
 	<h3><f:translate key="Family_Show_Members" /></h3>
 	<table class="tx-timekeeping-timeunits">
-		<tr>
-			<th><f:translate key="Family_Show_Members_Name" /></th>
-			<th><f:translate key="Family_Show_Members_Role" /></th>
-			<th><f:translate key="Family_Show_Members_WorkedTime" /></th>
-			<th><f:translate key="Family_Show_Members_WorkedCleaningTime" /></th>
-		</tr>
+		<thead>
+			<tr>
+				<th><f:translate key="Family_Show_Members_Name" /></th>
+				<th><f:translate key="Family_Show_Members_Role" /></th>
+				<th><f:translate key="Family_Show_Members_WorkedTime" /></th>
+				<th><f:translate key="Family_Show_Members_WorkedCleaningTime" /></th>
+			</tr>
+		</thead>
+		<tbody>
 		<f:for each="{family.assignments}" as="assignment">
 			<tr>
 				<td><f:if condition="{assignment.user.name}"><f:then>{assignment.user.name}</f:then><f:else>{assignment.user.username}</f:else></f:if></td>
@@ -51,11 +54,14 @@
 				<td><tk:timeFormat amount="{assignment.workedCleaningTime}" /></td>
 			</tr>
 		</f:for>
-		<tr class="summary">
-			<td></td>
-			<td></td>
-			<td><tk:timeFormat amount="{family.workedTime}" /></td>
-			<td><tk:timeFormat amount="{family.workedCleaningTime}" /></td>
-		</tr>
+		</tbody>
+		<tfoot>
+			<tr class="summary">
+				<td></td>
+				<td></td>
+				<td><tk:timeFormat amount="{family.workedTime}" /></td>
+				<td><tk:timeFormat amount="{family.workedCleaningTime}" /></td>
+			</tr>
+		</tfoot>
 	</table>
 </f:section>

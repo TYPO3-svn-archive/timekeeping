@@ -1,7 +1,7 @@
 <f:layout name="main" />
 
 <f:section name="title">
-	<f:translate key="Timeunit_Edit_Title" arguments="{0: user.name}" />
+	<f:translate key="Timeunit_Edit_Title" arguments="<f:if condition='{user.name}'><f:then>{0: user.name}</f:then><f:else>{0: user.username}</f:else></f:if>" />
 </f:section>
 
 <f:section name="menu" />

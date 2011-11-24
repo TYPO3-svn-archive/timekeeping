@@ -1,16 +1,19 @@
 {namespace tk=Tx_Timekeeping_ViewHelpers}
 <table class="tx-timekeeping-timeunits">
-	<tr>
-		<th><f:translate key="Timeunit_Index_List_Member" /></th>
-		<th><f:translate key="Timeunit_Index_List_DateOfWork" />{action}</th>
-		<th><f:translate key="Timeunit_Index_List_Description" /></th>
-		<th style="text-align: right;"><f:translate key="Timeunit_Index_List_Duration" /></th>
-		<th style="text-align: right;"><f:translate key="Timeunit_Index_List_Cleaning" /></th>
-		<th style="text-align: center;"><f:translate key="Timeunit_Index_List_Delete" /></th>
-	</tr>
+	<thead>
+		<tr>
+			<th><f:translate key="Timeunit_Index_List_Member" /></th>
+			<th><f:translate key="Timeunit_Index_List_DateOfWork" />{action}</th>
+			<th><f:translate key="Timeunit_Index_List_Description" /></th>
+			<th style="text-align: right;"><f:translate key="Timeunit_Index_List_Duration" /></th>
+			<th style="text-align: right;"><f:translate key="Timeunit_Index_List_Cleaning" /></th>
+			<th style="text-align: center;"><f:translate key="Timeunit_Index_List_Delete" /></th>
+		</tr>
+	</thead>
+	<tbody>
 	<f:for each="{timeunits}" as="timeunit">
 		<tr>
-			<td>{timeunit.assignment.user.name} ({timeunit.assignment.role.name})</td>
+			<td><f:if condition="{timeunit.assignment.user.name}"><f:then>{timeunit.assignment.user.name}</f:then><f:else>{timeunit.assignment.user.username}</f:else></f:if> ({timeunit.assignment.role.name})</td>
 			<td><f:format.date format="d.m.Y">{timeunit.dateOfWork}</f:format.date></td>
 			<td><f:link.action action="edit" controller="Timeunit" arguments="{timeunit : timeunit, family : family}">{timeunit.description}</f:link.action></td>
 			<td style="text-align: right;"><tk:timeFormat amount="{timeunit.duration}" /></td>
@@ -18,10 +21,13 @@
 			<td style="vertical-align: middle; text-align: center"><f:link.action action="delete" controller="Timeunit" arguments="{timeunit : timeunit, family : family}"><tk:icon icon="actions-edit-delete" title="delete" /></f:link.action></td>
 		</tr>
 	</f:for>
-	<tr class="summary">
-		<td colspan="3"></td>
-		<td style="text-align: right;"><tk:timeFormat amount="{family.workedTime}" /></td>
-		<td style="text-align: right;"><tk:timeFormat amount="{family.workedCleaningTime}" /></td>
-		<td></td>
-	</tr>
+	</tbody>
+	<tfoot>
+		<tr class="summary">
+			<td colspan="3"></td>
+			<td style="text-align: right;"><tk:timeFormat amount="{family.workedTime}" /></td>
+			<td style="text-align: right;"><tk:timeFormat amount="{family.workedCleaningTime}" /></td>
+			<td></td>
+		</tr>
+	</tfoot>
 </table>

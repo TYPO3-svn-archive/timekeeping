@@ -18,3 +18,50 @@ config.tx_extbase.persistence.classes {
         }
     }
 }
+
+lib.timekeepingjs = COA
+lib.timekeepingjs {
+
+    10 = TEMPLATE
+    10 {
+        template = FILE
+        template.file = {$plugin.tx_timekeeping.settings.template.frontendJsTemplatePath}
+        marks {
+
+        }
+    }
+}
+
+includeLibs.t3jquery = EXT:t3jquery/class.tx_t3jquery.php
+page.{$plugin.tx_timekeeping.settings.pageposition} = COA
+page.{$plugin.tx_timekeeping.settings.pageposition} {
+    10 = USER
+    10 {
+        userFunc = tx_t3jquery->addJS
+        tofooter = 0
+        forceOnTop = 1
+    }
+    20 = USER
+    20 {
+        userFunc = tx_t3jquery->addJS
+        jsdata.cObject < lib.timekeepingjs
+        compress = 1
+        tofooter = 0
+    }
+}
+
+page.includeCSS {
+	timekeeping = http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css
+	timekeeping.media = all
+}
+
+[globalVar = LIT:1 > {$plugin.tx_timekeeping.settings.js.toHeader}]
+
+	// move js code to footer
+
+page.{$plugin.tx_timekeeping.pageposition} {
+	10.tofooter = 1
+	20.tofooter = 1
+}
+
+[end]

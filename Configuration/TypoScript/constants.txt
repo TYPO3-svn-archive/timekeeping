@@ -1,3 +1,4 @@
+# customsubcategory=timekeeping_javascript_files=LLL:EXT:timekeeping/Resources/Private/Language/locallang.xml:constants.timekeeping_javascript_files
 plugin.tx_timekeeping {
 	view {
 		# cat=plugin.tx_timekeeping/file; type=string; label=Path to template root (FE)
@@ -12,6 +13,18 @@ plugin.tx_timekeeping {
 		storagePid = 
 	}
 	css {
+		# cat=plugin.tx_timekeeping/file; type=string; label=Path to CSS file
 		filePath = EXT:timekeeping/Resources/Public/Css/basics.css
+	}
+	settings {
+
+		# cat=plugin.tx_timekeeping//0010; type=text; label= Position in PAGE COA
+		pageposition = 283392
+
+		# cat=plugin.tx_timekeeping/enable/0020; type=boolean; label= jQuery and jQueryTools to header: Include jQuery and jQueryTools libraries to header
+		js.toHeader = 0
+
+		# cat=plugin.tx_timekeeping/timekeeping_javascript_files/0030; type=file[js]; label= Path to js Template
+		template.frontendJsTemplatePath = EXT:timekeeping/Resources/Public/Js/test.js
 	}
 }

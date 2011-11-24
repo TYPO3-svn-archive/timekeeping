@@ -9,6 +9,7 @@
 				<th style="text-align: right;"><f:translate key="Family_Index_WorkedCleaningTime" /></th>
 			</tr>
 		</thead>
+		<tbody>
 		<f:for each="{families}" as="family">
 			<tr>
 				<td><f:link.action action="show" arguments="{ family : family }">{family.name}</f:link.action></td>
@@ -17,5 +18,6 @@
 				<td style="text-align: right;"><tk:timeFormat amount="{family.workedCleaningTime}" /></td>
 			</tr>
 		</f:for>
+		</tbody>
 	</table>
 </f:if>

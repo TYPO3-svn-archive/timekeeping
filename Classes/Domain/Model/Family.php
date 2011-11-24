@@ -190,7 +190,11 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 * @return DateTime $start
 	 */
 	public function getStart() {
-		return $this->start;
+		if($this->start == NULL) {
+			return $this->start;
+		} else {
+			return $this->start->format('d.m.Y');
+		}
 	}
 
 	/**
@@ -199,7 +203,11 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 * @return DateTime $end
 	 */
 	public function getEnd() {
-		return $this->end;
+		if($this->end == NULL) {
+			return $this->end;
+		} else {
+			return $this->end->format('d.m.Y');
+		}
 	}
 
 	/**
