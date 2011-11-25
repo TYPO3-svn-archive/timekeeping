@@ -24,7 +24,10 @@ plugin.tx_timekeeping {
 		# cat=plugin.tx_timekeeping/enable/0020; type=boolean; label= jQuery and jQueryTools to header: Include jQuery and jQueryTools libraries to header
 		js.toHeader = 0
 
-		# cat=plugin.tx_timekeeping/timekeeping_javascript_files/0030; type=file[js]; label= Path to js Template
-		template.frontendJsTemplatePath = EXT:timekeeping/Resources/Public/Js/test.js
+		# cat=plugin.tx_timekeeping/enable/0030; type=file[js]; label= jQuery DataTables: Path to jQuery DataTables
+		js.jQueryDataTables = EXT:timekeeping/Resources/Public/Js/jquery.dataTables.min.js
+
+		# cat=plugin.tx_timekeeping/timekeeping_javascript_files/0040; type=file[js]; label= Path to js Template
+		template.frontendJsTemplatePath = EXT:timekeeping/Resources/Public/Js/timekeeping.js
 	}
 }

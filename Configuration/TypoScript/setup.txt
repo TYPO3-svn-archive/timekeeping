@@ -48,6 +48,12 @@ page.{$plugin.tx_timekeeping.settings.pageposition} {
         compress = 1
         tofooter = 0
     }
+    30 = USER
+    30 {
+        userFunc = tx_t3jquery->addJS
+	    jsfile = {$plugin.tx_timekeeping.settings.js.jQueryDataTables}
+        tofooter = 0
+    }
 }
 
 page.includeCSS {
@@ -62,6 +68,7 @@ page.includeCSS {
 page.{$plugin.tx_timekeeping.pageposition} {
 	10.tofooter = 1
 	20.tofooter = 1
+	30.tofooter = 1
 }
 
 [end]

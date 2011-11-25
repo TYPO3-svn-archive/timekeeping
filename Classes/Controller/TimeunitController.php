@@ -80,7 +80,9 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	 */
 
 	public function initializeAction() {
-		$this->response->addAdditionalHeaderData('<script type="text/javascript" src="typo3conf/ext/timekeeping/Resources/Public/Js/test.js"></script>');
+		//$this->response->addAdditionalHeaderData('<script type="text/javascript" src="typo3conf/ext/timekeeping/Resources/Public/Js/test.js"></script>');
+		//$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		//$pageRenderer->addJsFooterFile('typo3conf/ext/timekeeping/Resources/Public/Js/test.js');
 	}
 
 
