@@ -131,11 +131,7 @@ tr.even.gradeU td.sorting_3{background-color:#e2e2e2;}
 span.t3-icon{margin-right:2px;vertical-align:middle;display:inline-block;position:relative;overflow:hidden;}
 span.t3-icon-overlay{display:block;width:16px;height:16px;position:absolute;left:0;top:0;text-decoration:none;padding:0;}
 .t3-icon-empty{background-image:none;}
-.t3-icon-flags{background-image:url('/typo3/sysext/t3skin/images/sprites/flags.png?1295987454');height:11px;width:16px;}
-.t3-icon-actions{background-image:url('/typo3/sysext/t3skin/images/sprites/t3skin.png?1299879804') !important;height:16px;width:16px;}
-.t3-icon-apps{background-image:url('/typo3/sysext/t3skin/images/sprites/t3skin.png?1299879804') !important;height:16px;width:16px;}
-.t3-icon-mimetypes{background-image:url('/typo3/sysext/t3skin/images/sprites/t3skin.png?1299879804') !important;height:16px;width:16px;}
-.t3-icon-status{background-image:url('/typo3/sysext/t3skin/images/sprites/t3skin.png?1299879804') !important;height:16px;width:16px;}
+.t3-icon-actions,.t3-icon-apps,.t3-icon-mimetypes,.t3-icon-status{background-image:url('/typo3/sysext/t3skin/images/sprites/t3skin.png') !important;height:16px;width:16px;}
 .t3-icon-system-refresh{background-position:-270px -54px !important;}
 .t3-icon-view-go-forward{background-position:-198px -72px !important;}
 .t3-icon-system-backend-user-switch{background-position:-306px -36px !important;}
