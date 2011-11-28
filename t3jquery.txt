@@ -1,1 +1,1 @@
-components=jQuery,Core,Datepicker
+components=jQuery,Core,Datepicker,Dialog

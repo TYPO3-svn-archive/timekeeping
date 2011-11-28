@@ -6,6 +6,11 @@
 
 (function($) {
 	$(function() {
+		$('#timekeeping-menu a.delete').click(function() {
+			 if (confirm("Sind Sie sicher?")) {
+				 location.href = $(this).attr('href');
+			 }
+		});
 		$('.datepicker').datepicker({ dateFormat: 'dd.mm.yy' });
 		oTable = $('.datatables').dataTable({
 			"bJQueryUI": true,
