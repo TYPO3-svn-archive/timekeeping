@@ -72,6 +72,16 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 					$this->userRepository = $userRepository;
 	}
 
+	/**
+	 * A timeunit repository instance
+	 * @var Tx_Timekeeping_Domain_Repository_TimeunitRepository
+	 */
+	protected $timeunitRepository;
+
+	public function injectTimeunitRepository(Tx_Timekeeping_Domain_Repository_TimeunitRepository $timeunitRepository){
+					$this->timeunitRepository = $timeunitRepository;
+	}
+
 	/*
 	 * ACTION METHODS
 	 */
@@ -183,10 +193,17 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 		foreach($assignments as $userId => $roleId) {
 			if($roleId == 0) continue;
 			$family->assignUser ( $this->userRepository->findByUid((int)$userId),
-			                       $this->roleRepository->findByUid((int)$roleId) );
+			                       $this->roleRepository->findByUid((int)$roleId)
+								);
+			$timeunitsForUser = $this->timeunitRepository->getTimeunitsForUser($this->userRepository->findByUid((int)$userId));
+			$assignments2 = $family->getAssignmentForUser($this->userRepository->findByUid((int)$userId));
+			foreach ($timeunitsForUser as $timeunitForUser) {
+				$assignments2->addTimeunit($timeunitForUser);
+			}
 		}
+
 		$this->familyRepository->update($family);
-		$this->flashMessages->add("Die Familie {$family->getName()} wurde erfolgreich bearbeitet.");
+		$this->flashMessages->add("Die Familie {$family->getName()} wurde erfolgreich bearbeitet." . $blub);
 
 		$this->redirect('show', NULL, NULL, array('family' => $family));
 	}
