@@ -82,6 +82,16 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 					$this->timeunitRepository = $timeunitRepository;
 	}
 
+	/**
+	 * A assignment repository instance
+	 * @var Tx_Timekeeping_Domain_Repository_AssignmentRepository
+	 */
+	protected $assignmentRepository;
+
+	public function injectAssignmentRepository(Tx_Timekeeping_Domain_Repository_AssignmentRepository $assignmentRepository){
+					$this->assignmentRepository = $assignmentRepository;
+	}
+
 	/*
 	 * ACTION METHODS
 	 */
@@ -118,6 +128,11 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 	 * @return void
 	 */
 	public function showAction(Tx_Timekeeping_Domain_Model_Family $family) {
+		$assignmentsToRemove = $this->assignmentRepository->findByFamily();
+		foreach($assignmentsToRemove as $assignmentToRemove) {
+			$this->assignmentRepository->remove($assignmentToRemove);
+			//$this->flashMessages->add("Die Beziehung {$assignmentToRemove->getUid()} wurde gelöscht.");
+		}
 		$this->view->assign('family', $family);
 	}
 
@@ -181,8 +196,8 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 	 *
 	 * The update action. Updates an existing family in the database.
 	 *
-	 * @param Tx_Timekeeping_Domain_Model_Family $family The family
-	 * @param array $assignments                                 An array of users and roles that are to be assigned to this family.
+	 * @param Tx_Timekeeping_Domain_Model_Family    $family       The family
+	 * @param array                                 $assignments  An array of users and roles that are to be assigned to this family.
 	 * @return void
 	 * @dontverifyrequesthash
 	 *
@@ -190,20 +205,27 @@ class Tx_Timekeeping_Controller_FamilyController extends Tx_Timekeeping_Controll
 
 	public function updateAction( Tx_Timekeeping_Domain_Model_Family $family, $assignments ) {
 		$family->removeAllAssignments();
+
 		foreach($assignments as $userId => $roleId) {
-			if($roleId == 0) continue;
-			$family->assignUser ( $this->userRepository->findByUid((int)$userId),
-			                       $this->roleRepository->findByUid((int)$roleId)
-								);
-			$timeunitsForUser = $this->timeunitRepository->getTimeunitsForUser($this->userRepository->findByUid((int)$userId));
-			$assignments2 = $family->getAssignmentForUser($this->userRepository->findByUid((int)$userId));
-			foreach ($timeunitsForUser as $timeunitForUser) {
-				$assignments2->addTimeunit($timeunitForUser);
+			if($roleId == 0) {
+				//$family->unassignUser($this->userRepository->findByUid((int)$userId));
+				continue;
 			}
+			$family->assignUser($this->userRepository->findByUid((int)$userId),
+			                    $this->roleRepository->findByUid((int)$roleId)
+							   );
+
+			$timeunitsForUser = $this->timeunitRepository->getTimeunitsForUser($this->userRepository->findByUid((int)$userId));
+			$assignmentsForUser = $family->getAssignmentForUser($this->userRepository->findByUid((int)$userId));
+			foreach ($timeunitsForUser as $timeunitForUser) {
+				$assignmentsForUser->addTimeunit($timeunitForUser);
+			}
+			
 		}
 
 		$this->familyRepository->update($family);
-		$this->flashMessages->add("Die Familie {$family->getName()} wurde erfolgreich bearbeitet." . $blub);
+		$this->flashMessages->add("Die Familie {$family->getName()} wurde erfolgreich bearbeitet.");
+
 
 		$this->redirect('show', NULL, NULL, array('family' => $family));
 	}

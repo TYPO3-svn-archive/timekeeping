@@ -6,11 +6,48 @@
 
 (function($) {
 	$(function() {
-		$('#timekeeping-menu a.delete').click(function() {
-			 if (confirm("Sind Sie sicher?")) {
-				 location.href = $(this).attr('href');
-			 }
+		$('#dialog').dialog({
+			bgiframe: true,
+			autoOpen: false,
+			modal: true,
+			width: 350,
+			height: 150
 		});
+
+		$('#timekeeping-menu a.delete').click(function(e) {
+			e.preventDefault();
+			var targetUrl = $(this).attr('href');
+			$('#dialog').dialog({
+				buttons : {
+					'Abbrechen' : function() {
+						$(this).dialog('close');
+					},
+					'Familie löschen' : function() {
+						window.location.href = targetUrl;
+					}
+				},
+				title: 'Familie löschen'
+			});
+			$('#dialog').html('Sind Sie sicher, dass Sie diese Familie löschen wollen?').dialog('open');
+		});
+
+		$('a.confirm').click(function(e) {
+			e.preventDefault();
+			var targetUrl = $(this).attr('href');
+			$('#dialog').dialog({
+				buttons : {
+					'Abbrechen' : function() {
+						$(this).dialog('close');
+					},
+					'Eintrag löschen' : function() {
+						window.location.href = targetUrl;
+					}
+				},
+				title: 'Eintrag löschen'
+			});
+			$('#dialog').html('Sind Sie sicher, dass Sie diesen Eintrag löschen wollen?').dialog('open');
+		});
+
 		$('.datepicker').datepicker({ dateFormat: 'dd.mm.yy' });
 		oTable = $('.datatables').dataTable({
 			"bJQueryUI": true,
@@ -19,7 +56,8 @@
 				"sZeroRecords": "Leider nichts gefunden.",
 				"sInfo": "Zeige _START_ bis _END_ von _TOTAL_ Datensätzen",
 				"sInfoEmpty": "Zeige 0 bis 0 von 0 Datensätzen",
-				"sInfoFiltered": "(ungefiltert _MAX_)"
+				"sInfoFiltered": "(ungefiltert _MAX_)",
+				"sSearch": "Suche"
 			}
         }).show();
 		var nNodes = oTable.fnGetNodes( );

@@ -18,7 +18,7 @@
 			<td><f:link.action action="edit" controller="Timeunit" arguments="{timeunit : timeunit, family : family}">{timeunit.description}</f:link.action></td>
 			<td style="text-align: right;"><tk:timeFormat amount="{timeunit.duration}" /></td>
 			<td style="text-align: center; vertical-align: middle;"><f:if condition="{timeunit.cleaning} == 1"><tk:icon icon="status-status-checked" title="ja" /></f:if></td>
-			<td style="vertical-align: middle; text-align: center"><f:link.action action="delete" controller="Timeunit" arguments="{timeunit : timeunit, family : family}"><tk:icon icon="actions-edit-delete" title="delete" /></f:link.action></td>
+			<td style="vertical-align: middle; text-align: center"><f:link.action action="delete" controller="Timeunit" arguments="{timeunit : timeunit, family : family}" class="confirm"><tk:icon icon="actions-edit-delete" title="delete" /></f:link.action></td>
 		</tr>
 	</f:for>
 	</tbody>

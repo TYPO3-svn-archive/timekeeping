@@ -34,5 +34,25 @@
  */
 class Tx_Timekeeping_Domain_Repository_AssignmentRepository extends Tx_Extbase_Persistence_Repository {
 
+	/**
+	 *
+	 * Finds all families for an index view. The parent family can be specified
+	 * using the $family parameter (NULL by default). All families are ordered by the
+	 * family name in ascending order.
+	 *
+	 * @param  Tx_Timekeeping_Domain_Model_Family $family The family
+	 * @return Array<Tx_Timekeeping_Domain_Model_Assignment>  The result list.
+	 *
+	 */
+
+	public function findByFamily ( Tx_Timekeeping_Domain_Model_Family $family = NULL ) {
+
+		$query = $this->createQuery();
+		return $query
+			->matching($query->equals('family', $family ? $family : Array(0,NULL) ))
+			->execute();
+
+	}
+
 }
 ?>
