@@ -16,7 +16,7 @@
 			<td><f:if condition="{timeunit.assignment.user.name}"><f:then>{timeunit.assignment.user.name}</f:then><f:else>{timeunit.assignment.user.username}</f:else></f:if> ({timeunit.assignment.role.name})</td>
 			<td><f:format.date format="d.m.Y">{timeunit.dateOfWork}</f:format.date></td>
 			<td><f:link.action action="edit" controller="Timeunit" arguments="{timeunit : timeunit, family : family}">{timeunit.description}</f:link.action></td>
-			<td style="text-align: right;"><tk:timeFormat amount="{timeunit.duration}" /></td>
+			<td style="text-align: right;"><f:format.number decimals="2" decimalSeparator=".">{timeunit.duration}</f:format.number> <f:translate key="Timeunit_Index_Unit_Hours" /></td>
 			<td style="text-align: center; vertical-align: middle;"><f:if condition="{timeunit.cleaning} == 1"><tk:icon icon="status-status-checked" title="ja" /></f:if></td>
 			<td style="vertical-align: middle; text-align: center"><f:link.action action="delete" controller="Timeunit" arguments="{timeunit : timeunit, family : family}" class="confirm"><tk:icon icon="actions-edit-delete" title="delete" /></f:link.action></td>
 		</tr>
@@ -25,8 +25,8 @@
 	<tfoot>
 		<tr class="summary">
 			<td colspan="3"></td>
-			<td style="text-align: right;"><tk:timeFormat amount="{family.workedTime}" /></td>
-			<td style="text-align: right;"><tk:timeFormat amount="{family.workedCleaningTime}" /></td>
+			<td style="text-align: right;"><f:format.number decimals="2" decimalSeparator=".">{family.workedTime}</f:format.number> <f:translate key="Timeunit_Index_Unit_Hours" /></td>
+			<td style="text-align: right;"><f:format.number decimals="2" decimalSeparator=".">{family.workedCleaningTime}</f:format.number> <f:translate key="Timeunit_Index_Unit_Hours" /></td>
 			<td></td>
 		</tr>
 	</tfoot>

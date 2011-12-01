@@ -18,8 +18,8 @@
 				<td style="text-align: center;"><f:count subject="{family.assignments}" /></td>
 				<td>{family.start}</td>
 				<td>{family.end}</td>
-				<td style="text-align: right;"><tk:timeFormat amount="{family.workedTime}" /></td>
-				<td style="text-align: right;"><tk:timeFormat amount="{family.workedCleaningTime}" /></td>
+				<td style="text-align: right;"><f:format.number decimals="2" decimalSeparator=".">{family.workedTime}</f:format.number> <f:translate key="Timeunit_Index_Unit_Hours" /></td>
+				<td style="text-align: right;"><f:format.number decimals="2" decimalSeparator=".">{family.workedCleaningTime}</f:format.number> <f:translate key="Timeunit_Index_Unit_Hours" /></td>
 			</tr>
 		</f:for>
 		</tbody>

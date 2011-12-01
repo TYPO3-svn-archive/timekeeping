@@ -48,22 +48,7 @@ class Tx_Timekeeping_ViewHelpers_TimeFormatViewHelper extends Tx_Fluid_Core_View
 
 	public function render($amount) {
 		$unit = 'Hours';
-
-		/*
-		if($amount == 0) {
-			$unit = 'Hours';
-		} elseif($amount >= 604800) {
-			$unit = 'Days';
-			$amount /= 86400.00;
-		} elseif($amount >= 3600) {
-			$unit = 'Hours';
-			$amount /= 3600;
-		} elseif($amount >= 60) {
-			$unit = 'Minutes';
-			$amount /= 60.00;
-		}
-		*/
-		return number_format($amount, 2, ',', '') . ' ' . Tx_Extbase_Utility_Localization::translate('ViewHelper_Unit_' . $unit, 'Timekeeping');
+		return number_format($amount, 2, '.', '') . ' ' . Tx_Extbase_Utility_Localization::translate('ViewHelper_Unit_' . $unit, 'Timekeeping');
 	}
 
 }

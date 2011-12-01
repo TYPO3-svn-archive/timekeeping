@@ -124,7 +124,7 @@ tr.even.gradeU td.sorting_3{background-color:#e2e2e2;}
 .timekeeping-formfield,.dataTables_filter input{border:1px solid #cccccc;background:#f8f8f8;padding:3px;width:100px;}
 .dataTables_filter input{width:206px;}
 .timekeeping-formfield.long{width:420px;}
-.flashmessages{background-color:#98ac4d;color:#fff;padding:12px 12px 6px 12px;list-style:none;margin:0 0 10px 0;}
+.flashmessages{background-color:#f19315;color:#ffffff;padding:12px 12px 6px 12px;list-style:none;margin:0 0 10px 0;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}
 .flashmessages li{list-style:none;margin:0 0 6px 0;padding:0;}
 .clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
 * html .clearfix,*:first-child+html .clearfix{zoom:1;}

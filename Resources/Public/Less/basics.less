@@ -32,6 +32,8 @@
 @errorBackgroundColor: @mandatoryColor;
 @deleteColor: #fff;
 @deleteBackgroundColor: #ff0000;
+@flashmessagesBackgroundColor:#f19315;
+@flashmessagesColor:#fff;
 @placeHolderColor: #999;
 @legendColor: #000;
 @labelColor: #515151;
@@ -226,11 +228,12 @@ a.delete {
 }
 
 .flashmessages {
-	background-color: #98ac4d;
-	color:#fff;
+	background-color: @flashmessagesBackgroundColor;
+	color:@flashmessagesColor;
 	padding: 12px 12px 6px 12px;
 	list-style:none;
 	margin: 0 0 10px 0;
+	.rounded-corners();
 }
 
 .flashmessages li {

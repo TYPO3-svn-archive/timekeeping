@@ -50,8 +50,8 @@
 			<tr>
 				<td><f:if condition="{assignment.user.name}"><f:then>{assignment.user.name}</f:then><f:else>{assignment.user.username}</f:else></f:if></td>
 				<td>{assignment.role.name}</td>
-				<td><tk:timeFormat amount="{assignment.workedTime}" /></td>
-				<td><tk:timeFormat amount="{assignment.workedCleaningTime}" /></td>
+				<td><f:format.number decimals="2" decimalSeparator=".">{assignment.workedTime}</f:format.number> <f:translate key="Timeunit_Index_Unit_Hours" /></td>
+				<td><f:format.number decimals="2" decimalSeparator=".">{assignment.workedCleaningTime}</f:format.number> <f:translate key="Timeunit_Index_Unit_Hours" /></td>
 			</tr>
 		</f:for>
 		</tbody>
@@ -59,8 +59,8 @@
 			<tr class="summary">
 				<td></td>
 				<td></td>
-				<td><tk:timeFormat amount="{family.workedTime}" /></td>
-				<td><tk:timeFormat amount="{family.workedCleaningTime}" /></td>
+				<td><f:format.number decimals="2" decimalSeparator=".">{family.workedTime}</f:format.number> <f:translate key="Timeunit_Index_Unit_Hours" /></td>
+				<td><f:format.number decimals="2" decimalSeparator=".">{family.workedCleaningTime}</f:format.number> <f:translate key="Timeunit_Index_Unit_Hours" /></td>
 			</tr>
 		</tfoot>
 	</table>

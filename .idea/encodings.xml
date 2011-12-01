@@ -35,6 +35,9 @@
     <file url="file://$PROJECT_DIR$/Resources/Private/Partials/familyForm.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Partials/familyList.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Partials/formErrors.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Resources/Private/Partials/timeunitForm.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Resources/Private/Partials/timeunitList.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Resources/Private/Partials/timeunitUserList.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Backend/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Default/error.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Resources/Private/Templates/Family/show.html" charset="UTF-8" />

@@ -59,6 +59,7 @@
 			<label index="Timeunit_Index_List_Duration">Worked time</label>
 			<label index="Timeunit_Index_List_Cleaning">Cleaning</label>
 			<label index="Timeunit_Index_List_Delete">Delete</label>
+			<label index="Timeunit_Index_Unit_Hours">h</label>
 
 				<!-- TIMEUNIT: NEW/EDIT ACTION -->
 			<label index="Timeunit_Edit_Title">New timeunit: %s</label>
@@ -146,6 +147,7 @@
 			<label index="Timeunit_Index_List_Duration">Arbeitszeit</label>
 			<label index="Timeunit_Index_List_Cleaning">Putzen</label>
 			<label index="Timeunit_Index_List_Delete">Löschen</label>
+			<label index="Timeunit_Index_Unit_Hours">h</label>
 
 				<!-- TIMEUNIT: NEW/EDIT ACTION -->
 			<label index="Timeunit_Edit_Title">Neue Arbeitszeit von %s</label>
