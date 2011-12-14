@@ -66,7 +66,6 @@ class Tx_Timekeeping_Domain_Model_Family extends Tx_Extbase_DomainObject_Abstrac
 	 * When do the family leave the school
 	 *
 	 * @var DateTime
-	 * @validate NotEmpty
 	 */
 	protected $end;
 

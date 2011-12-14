@@ -1,5 +1,4 @@
 <?php
-
 /***************************************************************
  *  Copyright notice
  *
@@ -32,30 +31,9 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
-
-class Tx_Timekeeping_Domain_Validator_TimeunitValidator extends Tx_Extbase_Validation_Validator_AbstractValidator {
-
-
-
-	/**
-	 *
-	 * Determines if a timeunit object is valid.
-	 * @param Tx_Timekeeping_Domain_Model_Timeunit $timeunit The timeunit object that
-	 *                                                           is to be validated.
-	 * @return boolean TRUE, if the timeunit object is valid, otherwise FALSE.
-	 *
-	 */
-	
-	public function isValid($timeunit) {
-
-		if(!$timeunit instanceof Tx_Timekeeping_Domain_Model_Timeunit) {
-			$this->addError(Tx_Extbase_Utility_Localization::translate('Timeunit_Error_invalid', 'Timekeeping'), 1265721022);
-		}
-
-		return count($this->getErrors()) === 0;
-
-	}
-
+class Tx_Timekeeping_Domain_Exception_NoDateOfWorkException extends Tx_Timekeeping_Domain_Exception_AbstractException {
+	protected $code = 1266412844;
+	protected $message = "Bitte geben Sie ein Datum ein!";
 }
 
 ?>

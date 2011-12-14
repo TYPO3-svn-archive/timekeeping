@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DependencyValidationManager">
-    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
-  </component>
-  <component name="Git.Settings">
-    <option name="GIT_EXECUTABLE" value="/usr/local/git/bin/git" />
-    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
-  </component>
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
@@ -17,20 +10,6 @@
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
-              <option name="branchMap">
-                <map>
-                  <entry key="https://svn.typo3.org/TYPO3v4/Extensions/timekeeping/branches">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                  <entry key="https://svn.typo3.org/TYPO3v4/Extensions/timekeeping/tags">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                </map>
-              </option>
               <option name="branchUrls">
                 <list>
                   <option value="https://svn.typo3.org/TYPO3v4/Extensions/timekeeping/branches" />

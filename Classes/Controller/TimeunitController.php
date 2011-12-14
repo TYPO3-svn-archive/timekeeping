@@ -80,9 +80,6 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 	 */
 
 	public function initializeAction() {
-		//$this->response->addAdditionalHeaderData('<script type="text/javascript" src="typo3conf/ext/timekeeping/Resources/Public/Js/test.js"></script>');
-		//$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-		//$pageRenderer->addJsFooterFile('typo3conf/ext/timekeeping/Resources/Public/Js/test.js');
 	}
 
 
@@ -147,7 +144,9 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 		$assignment = $user ? $family->getAssignmentForUser($user) : NULL;
 		if($assignment === NULL) throw new Tx_Timekeeping_Domain_Exception_NoFamilyMemberException();
 
-			# Add the new timeunit to the family assingment. The $assignment property in
+		//if($timeunit->getDateOfWork() === NULL) throw new Tx_Timekeeping_Domain_Exception_NoDateOfWorkException();
+
+		# Add the new timeunit to the family assignment. The $assignment property in
 			# the timeunit object is set automatically.
 		$assignment->addTimeunit($timeunit);
 		$timeunit->getFamily()->addAssignment($assignment);

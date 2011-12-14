@@ -6,6 +6,10 @@
 
 (function($) {
 	$(function() {
+		$('.f3-form-error').focus(function(){
+			$(this).removeClass('f3-form-error');
+		});
+
 		$('#dialog').dialog({
 			bgiframe: true,
 			autoOpen: false,

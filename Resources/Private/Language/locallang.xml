@@ -49,6 +49,9 @@
 
 				<!-- FAMILY ERRORS -->
 			<label index="Family_Error_name_1238108067">The minimum length for the family name is 3 characters.</label>
+			<label index="Family_Error_start_1221560910">Please enter the date of accession.</label>
+			<label index="Family_Error_end_1221560910">Please enter the date of precipitation.</label>
+
 	
 				<!-- TIMEUNIT: INDEX ACTION -->
 			<label index="Timeunit_Index_Title">List timeunits: %s</label>
@@ -72,9 +75,11 @@
 			<label index="Timeunit_Form_Save">Save</label>
 
 				<!-- TIMEUNIT ERRORS -->
-			<label index="Timeunit_Error_comment_1221560718">Please specify a comment for this timeunit.</label>
-			<label index="Timeunit_Error_1265721025">The stop time needs to be after the start time.</label>
-	
+			<label index="Timeunit_Error_Invalid">Please enter a valid timeunit.</label>
+			<label index="Timeunit_Error_dateOfWork_1221560910">Please enter a date for this timeunit.</label>
+			<label index="Timeunit_Error_description_1221560718">Please specify a description for this timeunit.</label>
+			<label index="Timeunit_Error_duration_1221560718">Please specify a duration for this timeunit.</label>
+
 				<!-- VIEWHELPERS: TIME UNITS -->
 			<label index="ViewHelper_Unit_Hours">hours</label>
 			<label index="ViewHelper_Unit_Minutes">minutes</label>
@@ -134,6 +139,8 @@
 
 				<!-- FAMILY ERRORS -->
 			<label index="Family_Error_name_1238108067">Bitte geben Sie mindestens drei Buchstaben als Familiennamen ein.</label>
+			<label index="Family_Error_start_1221560910">Bitte geben Sie das Beitrittsdatum ein.</label>
+			<label index="Family_Error_end_1221560910">Bitte geben Sie das voraussichtliche Ausscheidungsdatum ein.</label>
 
 			<!-- MEMBER: SHOW ACTION -->
 			<label index="Member_Show_Title">Arbeitszeiten von %s</label>
@@ -160,8 +167,10 @@
 			<label index="Timeunit_Form_Save">Speichern</label>
 
 				<!-- TIMEUNIT ERRORS -->
-			<label index="Timeunit_Error_comment_1221560718">Bitte geben Sie eine Beschreibung ein.</label>
-			<label index="Timeunit_Error_1265721025">The stop time needs to be after the start time.</label>
+			<label index="Timeunit_Error_Invalid">Bitte geben Sie eine gültige Zeiteinheit ein.</label>
+			<label index="Timeunit_Error_dateOfWork_1221560910">Bitte geben Sie ein Datum ein.</label>
+			<label index="Timeunit_Error_description_1221560718">Bitte geben Sie eine Beschreibung ein.</label>
+			<label index="Timeunit_Error_duration_1221560718">Bitte geben Sie die Arbeitszeit ein.</label>
 
 				<!-- VIEWHELPERS: TIME UNITS -->
 			<label index="ViewHelper_Unit_Hours">h</label>

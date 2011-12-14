@@ -3,7 +3,7 @@
 <f:form object="{family}" name="family" action="{action}">
 
 	<f:form.errors for="family">
-		<div style="background-color: #fdd; padding: 12px;">
+		<div class="formerror">
 			<f:for each="{error.errors}" as="fieldError">
 				<f:translate key="Family_Error_{error.propertyName}_{fieldError.code}" default="Family_Error_{error.propertyName}_{fieldError.code}" />
 			</f:for>

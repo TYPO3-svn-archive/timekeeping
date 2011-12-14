@@ -1,18 +1,15 @@
 {namespace tk=Tx_Timekeeping_ViewHelpers}
-<tk:jsToFooterFile file="typo3conf/ext/timekeeping/Resources/Public/Js/test.js" />
 
 <f:form action="{action}" object="{timeunit}" name="timeunit">
 
 	<f:form.errors for="timeunit">
-		<div style="background-color: #fdd; padding: 12px;">
 			<f:if condition="{error.errors}"><f:then>
 				<f:for each="{error.errors}" as="fieldError">
-					<div><f:translate key="Timeunit_Error_{error.propertyName}_{fieldError.code}" default="{error.propertyName}_{fieldError.code}" /></div>
+					<div class="formerror"><f:translate key="Timeunit_Error_{error.propertyName}_{fieldError.code}" default="{error.propertyName}_{fieldError.code}" /></div>
 				</f:for>
 			</f:then><f:else>
 				<div><f:translate key="Timeunit_Error_{error.code}" default="{error.code}" /></div>
 			</f:else></f:if>
-		</div>
 	</f:form.errors>
 
 	<table>

@@ -27,13 +27,17 @@
 @multipleTabColor: #666;
 @multipleTabActiveColor: #333;
 @fieldsetBorderColor: #ccc;
-@mandatoryColor: #ff0000;
+@mandatoryColor: #f53421;
 @errorColor: #fff;
 @errorBackgroundColor: @mandatoryColor;
 @deleteColor: #fff;
-@deleteBackgroundColor: #ff0000;
+@deleteBackgroundColor: #f53421;
 @flashmessagesBackgroundColor:#f19315;
 @flashmessagesColor:#fff;
+@formFieldErrorBackgroundColor: #FBD2D0;
+@formFieldErrorBorderColor:#d40f04;
+@formFieldErrorColor:#333;
+@formErrorColor:#d40f04;
 @placeHolderColor: #999;
 @legendColor: #000;
 @labelColor: #515151;
@@ -42,6 +46,12 @@
 @inputFocusBackgroundColor: #fff;
 @inputFocusBorderColor: #333;
 @descriptionBackgroundColor: #00559E;
+@messageOkBackgroundColor: #98ac4d;
+@messageOkBorderColor: #5f6740;
+@messageOkColor:#fff;
+@messageErrorBackgroundColor: #f53421;
+@messageErrorBorderColor: #d40f04;
+@messageErrorColor: #fff;
 @progressBackgroundColor: #C5FF00;
 @buttonBackgroundColor: #ccc;
 @buttonBorderColor: #888;
@@ -240,6 +250,16 @@ a.delete {
 	list-style:none;
 	margin:0 0 6px 0;
 	padding:0;
+}
+
+.f3-form-error {
+	background-color: @formFieldErrorBackgroundColor;
+	border-color: @formFieldErrorBorderColor;
+	color: @formFieldErrorColor;
+}
+
+.formerror {
+	color: @formErrorColor;
 }
 
 .clearfix:after {
@@ -560,3 +580,82 @@ span.t3-icon-overlay{display:block;width:16px;height:16px;position:absolute;left
 .t3-icon-version-15{background-position:-0px -252px !important}
 .t3-icon-version-47{background-position:-252px -270px !important}
 .t3-icon-status-current{background-position:-126px -216px !important}
+#typo3-messages {
+  margin-bottom: 10px;
+  font-family: arial, sans-serif; }
+
+.typo3-message {
+  margin-bottom: 4px;
+  padding: 12px;
+  padding-left: 36px; }
+
+.typo3-message ul, .typo3-message ol {
+  padding-left: 16px; }
+
+.typo3-message .message-header {
+  display: block; }
+
+.typo3-message {
+  border: 1px solid;
+  background-position: 10px 12px;
+  background-repeat: no-repeat; }
+
+.typo3-message a {
+  text-decoration: underline; }
+
+.typo3-message li {
+  margin-bottom: 10px;
+  list-style: disc; }
+
+.typo3-message .message-header {
+  font-size: 11px;
+  font-weight: bold; }
+
+.message-notice {
+  color: #777;
+  background-color: #f6f7fa;
+  background-image: url("/typo3/sysext/t3skin/icons/gfx/notice.png");
+  border-color: #c2cbcf; }
+
+.message-notice a {
+  color: #777; }
+
+.message-information {
+  color: #4c73a1;
+  background-color: #eaf7ff;
+  background-image: url("/typo3/sysext/t3skin/icons/gfx/information.png");
+  border-color: #c5dbe6; }
+
+.message-information a {
+  color: #4c73a1; }
+
+.message-ok {
+  color: #3b7826;
+  background-color: @messageOkBackgroundColor;
+  background-image: url("/typo3/sysext/t3skin/icons/gfx/ok.png");
+  border-color: @messageOkBorderColor;
+  color: @messageOkColor;
+}
+
+.message-ok a {
+  color: #3b7826; }
+
+.message-warning {
+  color: #9e7d4a;
+  background-color: #fbf6de;
+  background-image: url("/typo3/sysext/t3skin/icons/gfx/warning.png");
+  border-color: #b1905c; }
+
+.message-warning a {
+  color: #9e7d4a; }
+
+.message-error {
+  background-color: @messageErrorBackgroundColor;
+  background-image: url("/typo3/sysext/t3skin/icons/gfx/error.png");
+  border-color: @messageErrorBorderColor;
+  color:@messageErrorColor;
+}
+
+.message-error a {
+  color: #aa0225;
+}

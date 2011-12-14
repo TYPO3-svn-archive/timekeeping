@@ -32,30 +32,27 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
+class Tx_Timekeeping_Service_AccessControlService implements t3lib_Singleton {
 
-class Tx_Timekeeping_Domain_Validator_TimeunitValidator extends Tx_Extbase_Validation_Validator_AbstractValidator {
-
-
-
-	/**
-	 *
-	 * Determines if a timeunit object is valid.
-	 * @param Tx_Timekeeping_Domain_Model_Timeunit $timeunit The timeunit object that
-	 *                                                           is to be validated.
-	 * @return boolean TRUE, if the timeunit object is valid, otherwise FALSE.
-	 *
-	 */
-	
-	public function isValid($timeunit) {
-
-		if(!$timeunit instanceof Tx_Timekeeping_Domain_Model_Timeunit) {
-			$this->addError(Tx_Extbase_Utility_Localization::translate('Timeunit_Error_invalid', 'Timekeeping'), 1265721022);
+	public function isLoggedIn($person = NULL) {
+		if (is_object($person)) {
+			if($person->getUid() === $this->getFrontendUserUid()) {
+				return TRUE;
+			}
 		}
+		return FALSE;
+	}
 
-		return count($this->getErrors()) === 0;
 
+	public function getFrontendUserUid() {
+		if($this->hasLoggedInFrontendUser() && !empty($GLOBALS['TSFE']->fe_user->user['uid'])) {
+			return intval($GLOBALS['TSFE']->fe_user->user['uid']);
+		}
+		return NULL;
+	}
+
+	public function hasLoggedInFrontendUser() {
+		return $GLOBALS['TSFE']->loginUser === 1 ? TRUE : FALSE;
 	}
 
 }
-
-?>
