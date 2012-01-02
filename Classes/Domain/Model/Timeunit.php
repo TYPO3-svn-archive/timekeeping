@@ -77,7 +77,8 @@ class Tx_Timekeeping_Domain_Model_Timeunit extends Tx_Extbase_DomainObject_Abstr
 	 */
 	protected $cleaning;
 
-	
+
+
 	/**
 	 * GETTERS
 	 */
@@ -254,6 +255,5 @@ class Tx_Timekeeping_Domain_Model_Timeunit extends Tx_Extbase_DomainObject_Abstr
 	public function setCleaning($cleaning) {
 		$this->cleaning = $cleaning;
 	}
-
 }
 ?>

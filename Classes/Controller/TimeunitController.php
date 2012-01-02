@@ -210,7 +210,7 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 
 	/**
 	 *
-	 * The delete action. Deletes an existing family from the database.
+	 * The delete action. Deletes an existing timeunit from the database.
 	 *
 	 * @param Tx_Timekeeping_Domain_Model_Family $family The family
 	 * @param Tx_Timekeeping_Domain_Model_Timeunit $timeunit The timeunit that is to be deleted
@@ -224,6 +224,35 @@ class Tx_Timekeeping_Controller_TimeunitController extends Tx_Timekeeping_Contro
 		$this->flashMessages->add("Der Eintrag wurde erfolgreich gelöscht.");
 
 		$this->redirect('index', NULL, NULL, array('family' => $family));
+	}
+
+	/**
+	 *
+	 * The deleteallpre action. Deletes existing timeunits in a specific date range from the database.
+	 *
+	 * @return void
+	 *
+	 */
+
+	public function deleteallpreAction() {
+
+	}
+
+	/**
+	 *
+	 * The deleteall action. Deletes existing timeunits in a specific date range from the database.
+	 *
+	 * @param Tx_Timekeeping_Domain_Model_DeleteTimeunits $timeunits The timeunits which should be deleted
+	 * @return void
+	 * @dontverifyrequesthash
+	 *
+	 */
+
+	public function deleteallAction( Tx_Timekeeping_Domain_Model_DeleteTimeunits $timeunits ) {
+		$this->timeunitRepository->removeRange($timeunits);
+		$this->flashMessages->add("Alle Einträge für den gewählten Zeitraum wurden erfolgreich gelöscht.");
+
+		$this->redirect('index', 'family', NULL, NULL);
 	}
 
 	/*

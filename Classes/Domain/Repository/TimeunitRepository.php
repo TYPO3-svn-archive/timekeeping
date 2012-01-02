@@ -99,5 +99,33 @@ class Tx_Timekeeping_Domain_Repository_TimeunitRepository extends Tx_Extbase_Per
 		return $query->execute();
 
 	}
+
+	/**
+	 *
+	 * Removes all timeunits within a specific range
+	 *
+	 * @param Tx_Timekeeping_Domain_Model_DeleteTimeunits $timeunits
+	 * @return Array<Tx_Timekeeping_Domain_Model_Timeunit>
+	 *
+	 */
+
+	public function removeRange($timeunits){
+		$extbaseFrameworkConfiguration = Tx_Extbase_Dispatcher::getExtbaseFrameworkConfiguration();
+		$pidList = implode(', ', t3lib_div::intExplode(',', $extbaseFrameworkConfiguration['persistence']['storagePid']));
+
+		$sql = "UPDATE tx_timekeeping_domain_model_timeunit t
+				SET t.deleted = 1
+				WHERE  t.date_of_work >= {$timeunits->getFromDate()}
+					   AND t.date_of_work <= {$timeunits->getToDate()}
+					   AND t.deleted = 0 AND t.pid IN ($pidList)";
+
+		t3lib_div::devlog($sql, 'timekeeping', 0);
+
+		$query = $this->createQuery();
+		$query->statement($sql);
+		return $query->execute();
+
+
+	}
 }
 ?>

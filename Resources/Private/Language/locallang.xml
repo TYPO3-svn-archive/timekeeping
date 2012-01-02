@@ -17,7 +17,8 @@
 			<label index="Family_Index_WorkedTime">Worked time</label>
 			<label index="Family_Index_WorkedCleaningTime">Cleaning time</label>
 			<label index="Family_Index_Action_New">New Family</label>
-	
+			<label index="Family_Index_Action_Reset">Delete timeunits</label>
+
 				<!-- FAMILY: SHOW ACTION -->
 			<label index="Family_Show_Title">Family details: %s</label>
 			<label index="Family_Show_Action_Back">Back</label>
@@ -74,6 +75,13 @@
 			<label index="Timeunit_Form_Cleaning">Cleaning</label>
 			<label index="Timeunit_Form_Save">Save</label>
 
+			<!-- TIMEUNIT: DELETE ACTION -->
+			<label index="Timeunit_Delete_Title">Delete timeunits</label>
+			<label index="Timeunit_Form_FromDate">From Date</label>
+			<label index="Timeunit_Form_ToDate">To Date</label>
+			<label index="Timeunit_Form_Confirmation">Are you sure?</label>
+			<label index="Timeunit_Form_Delete">Delete</label>
+
 				<!-- TIMEUNIT ERRORS -->
 			<label index="Timeunit_Error_Invalid">Please enter a valid timeunit.</label>
 			<label index="Timeunit_Error_dateOfWork_1221560910">Please enter a date for this timeunit.</label>
@@ -110,6 +118,7 @@
 			<label index="Family_Index_WorkedTime">Arbeitsstunden</label>
 			<label index="Family_Index_WorkedCleaningTime">Putzen</label>
 			<label index="Family_Index_Action_New">Neue Familie anlegen</label>
+			<label index="Family_Index_Action_DeleteTimeunits">Arbeitszeiten löschen</label>
 
 				<!-- FAMILY: SHOW ACTION -->
 			<label index="Family_Show_Title">Details Familie %s</label>
@@ -136,6 +145,13 @@
 			<label index="Family_Form_EndDate">Ausscheidungsdatum</label>
 			<label index="Family_Form_Members">Mitglieder</label>
 			<label index="Family_Form_Save">Speichern</label>
+
+			<!-- TIMEUNIT: DELETE ACTION -->
+			<label index="Timeunit_Delete_Title">Arbeitszeiten löschen</label>
+			<label index="Timeunit_Form_FromDate">Von</label>
+			<label index="Timeunit_Form_ToDate">Bis</label>
+			<label index="Timeunit_Form_Confirmation">Sind Sie sicher?</label>
+			<label index="Timeunit_Form_Delete">Löschen</label>
 
 				<!-- FAMILY ERRORS -->
 			<label index="Family_Error_name_1238108067">Bitte geben Sie mindestens drei Buchstaben als Familiennamen ein.</label>

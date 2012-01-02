@@ -8,12 +8,12 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	'Pi1',
 	array(
 		'Family' => 'index,show,new,create,delete,edit,update',
-		'Timeunit' => 'index,new,create,delete,edit,update',
+		'Timeunit' => 'index,new,create,delete,edit,update,deleteallpre,deleteall',
 	),
 	// non-cacheable actions
 	array(
 		'Family' => 'index,show,new,create,delete,edit,update',
-		'Timeunit' => 'index,new,create,delete,edit,update',
+		'Timeunit' => 'index,new,create,delete,edit,update,deleteallpre,deleteall',
 	)
 );
 

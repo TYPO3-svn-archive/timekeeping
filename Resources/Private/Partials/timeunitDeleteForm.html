@@ -1,0 +1,29 @@
+{namespace tk=Tx_Timekeeping_ViewHelpers}
+
+<f:form action="{action}" object="{timeunits}" name="timeunits">
+
+	<f:form.errors for="timeunits">
+			<f:if condition="{error.errors}"><f:then>
+				<f:for each="{error.errors}" as="fieldError">
+					<div class="formerror"><f:translate key="Timeunit_Error_{error.propertyName}_{fieldError.code}" default="{error.propertyName}_{fieldError.code}" /></div>
+				</f:for>
+			</f:then><f:else>
+				<div><f:translate key="Timeunit_Error_{error.code}" default="{error.code}" /></div>
+			</f:else></f:if>
+	</f:form.errors>
+
+	<table>
+		<tr>
+			<th><label for="fromdate"><f:translate key="Timeunit_Form_FromDate" /></label></th>
+			<td><f:form.textfield property="fromDate" class="timekeeping-formfield datepicker" id="fromdate" placeholder="z.B. 20.07.2011" /></td>
+		</tr>
+		<tr>
+			<th><label for="todate"><f:translate key="Timeunit_Form_ToDate" /></label></th>
+			<td><f:form.textfield property="toDate" class="timekeeping-formfield datepicker" id="todate" placeholder="z.B. 20.07.2012" /></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><f:form.submit value="{f:translate(key:'Timeunit_Form_Delete')}" /></td>
+		</tr>
+	</table>
+</f:form>
